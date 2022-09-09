@@ -30,11 +30,11 @@ const Navbar = () => {
             <div onClick={() => navigate("/products")} className={`nav-link cursor-pointer fw-medium normal me-lg-4 ${location.pathname === "/products" ? " active" : ""}`}>
               Products
             </div>
-            <div onClick={() => navigate("/categories")} className={`nav-link cursor-pointer fw-medium normal me-lg-4 ${location.pathname === "/categories" ? " active" : ""}`}>
-              Categories
+            <div onClick={() => navigate("/products/product")} className={`nav-link cursor-pointer fw-medium normal me-lg-4 ${location.pathname === "/products/product" ? " active" : ""}`}>
+              Product
             </div>
-            <div onClick={() => navigate("/hot-sale")} className={`nav-link cursor-pointer fw-medium normal me-lg-4 ${location.pathname === "/hot-sale" ? " active" : ""}`}>
-              Hot Sale
+            <div onClick={() => navigate("/about")} className={`nav-link cursor-pointer fw-medium normal me-lg-4 ${location.pathname === "/about" ? " active" : ""}`}>
+              About
             </div>
           </div>
           <div className="d-none d-lg-flex align-items-center">

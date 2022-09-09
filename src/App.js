@@ -10,6 +10,7 @@ import Footer from "./layouts/Footer";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Detail from "./pages/Detail";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
         {/* Static Route */}
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/about" element={<About />} />
         {/* Dynamic Route */}
-        <Route path="/products/:nama" element={<Detail />} />
+        <Route path="/products/product" element={<Detail />} />
       </Routes>
       <Footer />
     </BrowserRouter>
