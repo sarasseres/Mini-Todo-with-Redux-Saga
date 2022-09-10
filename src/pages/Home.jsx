@@ -108,7 +108,7 @@ const Home = () => {
           </div>
           <div className="row justify-content-between m-0">
             <div className="col-lg-8 col-md-6 mb-md-0 mb-4">
-              <div className="product position-relative primary d-flex flex-column justify-content-end" style={{ backgroundImage: `url(${require("../assets/images/products1.jpg")})` }}>
+              <div className="product position-relative primary d-flex flex-column justify-content-end" style={{ backgroundImage: `url(${require("../assets/images/products/products1.jpg")})` }}>
                 <small className="category fw-semibold position-absolute py-1 px-3">LADIES</small>
                 <div className="product-content d-flex justify-content-between align-items-center py-25 px-4">
                   <p className="fw-semibold text-white normal m-0">Rp. 400.000,00</p>
@@ -122,7 +122,7 @@ const Home = () => {
             <div className="col-lg-4 col-md-6">
               <div className="row m-0">
                 <div className="col-12 p-0 pb-2">
-                  <div className="product position-relative d-flex flex-column justify-content-end" style={{ backgroundImage: `url(${require("../assets/images/products2.jpg")})` }}>
+                  <div className="product position-relative d-flex flex-column justify-content-end" style={{ backgroundImage: `url(${require("../assets/images/products/products2.jpg")})` }}>
                     <small className="category fw-semibold position-absolute py-1 px-3">MEN</small>
                     <div className="product-content d-flex justify-content-between align-items-center py-25 px-4">
                       <p className="fw-semibold text-white normal m-0">Rp. 280.000,00</p>
@@ -134,7 +134,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div className="col-12 p-0 pt-3">
-                  <div className="product position-relative d-flex flex-column justify-content-end" style={{ backgroundImage: `url(${require("../assets/images/products4.jpg")})` }}>
+                  <div className="product position-relative d-flex flex-column justify-content-end" style={{ backgroundImage: `url(${require("../assets/images/products/products4.jpg")})` }}>
                     <small className="category fw-semibold position-absolute py-1 px-3">LADIES</small>
                     <div className="product-content d-flex justify-content-between align-items-center py-25 px-4">
                       <p className="fw-semibold text-white normal m-0">Rp. 450.000,00</p>
@@ -148,7 +148,7 @@ const Home = () => {
               </div>
             </div>
             <div className="col-lg-5 col-md-5 pt-4">
-              <div className="product position-relative d-flex flex-column justify-content-end" style={{ backgroundImage: `url(${require("../assets/images/products5.jpg")})` }}>
+              <div className="product position-relative d-flex flex-column justify-content-end" style={{ backgroundImage: `url(${require("../assets/images/products/products5.jpg")})` }}>
                 <small className="category fw-semibold position-absolute py-1 px-3">LADIES</small>
                 <div className="product-content d-flex justify-content-between align-items-center py-25 px-4">
                   <p className="fw-semibold text-white normal m-0">Rp. 519.999,00</p>
@@ -160,7 +160,7 @@ const Home = () => {
               </div>
             </div>
             <div className="col-md-7 pt-4">
-              <div className="product position-relative d-flex flex-column justify-content-end" style={{ backgroundImage: `url(${require("../assets/images/products3.jpg")})` }}>
+              <div className="product position-relative d-flex flex-column justify-content-end" style={{ backgroundImage: `url(${require("../assets/images/products/products3.jpg")})` }}>
                 <small className="category fw-semibold position-absolute py-1 px-3">MEN</small>
                 <div className="product-content d-flex justify-content-between align-items-center py-25 px-4">
                   <p className="fw-semibold text-white normal m-0">Rp. 340.000,00</p>
