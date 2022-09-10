@@ -10,8 +10,8 @@ const Products = () => {
   return (
     <>
       <Components.Container>
-        <h1>Halaman Products</h1>
-        <div className="d-flex align-items-center mt-4">
+        <h1 className="text-left mb-4">Halaman Products</h1>
+        <div className="d-flex align-items-center mx-auto">
           {/* <div className="me-4 cursor-pointer" onClick={() => navigate('/products/Baju Wanita Dewasa Pink')}>
             Baju Wanita Dewasa Pink
           </div> */}
@@ -33,9 +33,51 @@ const Products = () => {
             <ProductsComponents.Card image={require('../assets/images/products/products4.jpg')} />
           </div>
         </div>
+        <div className="row justify-content-between">
+          <div className="col-3 my-5">
+            <ProductsComponents.Card image={require('../assets/images/products/products1.jpg')} title="Ini Card" button="Ini Card Button" />
+          </div>
+          <div className="col-3 my-5">
+            <ProductsComponents.Card image={require('../assets/images/products/products2.jpg')} title="Ini Card Terisi" />
+          </div>
+          <div className="col-3 my-5">
+            <ProductsComponents.Card image={require('../assets/images/products/products3.jpg')} button="Ini Card Mempunyai Button" />
+          </div>
+          <div className="col-3 my-5">
+            <ProductsComponents.Card image={require('../assets/images/products/products4.jpg')} />
+          </div>
+        </div>
+        <div className="row justify-content-between">
+          <div className="col-3 my-5">
+            <ProductsComponents.Card image={require('../assets/images/products/products1.jpg')} title="Ini Card" button="Ini Card Button" />
+          </div>
+          <div className="col-3 my-5">
+            <ProductsComponents.Card image={require('../assets/images/products/products2.jpg')} title="Ini Card Terisi" />
+          </div>
+          <div className="col-3 my-5">
+            <ProductsComponents.Card image={require('../assets/images/products/products3.jpg')} button="Ini Card Mempunyai Button" />
+          </div>
+          <div className="col-3 my-5">
+            <ProductsComponents.Card image={require('../assets/images/products/products4.jpg')} />
+          </div>
+        </div>{' '}
+        <div className="row justify-content-between">
+          <div className="col-3 my-5">
+            <ProductsComponents.Card image={require('../assets/images/products/products1.jpg')} title="Ini Card" button="Ini Card Button" />
+          </div>
+          <div className="col-3 my-5">
+            <ProductsComponents.Card image={require('../assets/images/products/products2.jpg')} title="Ini Card Terisi" />
+          </div>
+          <div className="col-3 my-5">
+            <ProductsComponents.Card image={require('../assets/images/products/products3.jpg')} button="Ini Card Mempunyai Button" />
+          </div>
+          <div className="col-3 my-5">
+            <ProductsComponents.Card image={require('../assets/images/products/products4.jpg')} />
+          </div>
+        </div>
       </Components.Container>
       <Components.Container>
-        <ProductsComponents.Header value="Halo Teman" />
+        <ProductsComponents.Header value="" />
       </Components.Container>
     </>
   );
