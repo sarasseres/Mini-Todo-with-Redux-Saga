@@ -3,7 +3,7 @@ import "./style.css";
 const Footer = () => {
   return (
     <>
-      <footer className="py-5 bg-light-primary mt-5">
+      <footer className="py-5 bg-light-primary">
         <div className="container">
           <div className="row justify-content-between px-3 px-md-0">
             <div className="col-lg-4 ps-0 ps-lg-3 pe-0 mb-5 mb-lg-0 footer-brand">

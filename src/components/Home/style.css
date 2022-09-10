@@ -60,8 +60,25 @@ section {
   border-radius: 20px;
 }
 
-.tes {
-  color: red;
+.partners-section .partners {
+  width: 104%;
+  margin-left: -1%;
+  transform: rotate(-4deg);
+}
+
+.promotion-section {
+  margin-top: 10em;
+}
+
+.promotion-section button {
+  color: var(--mainColor);
+  border-radius: 2px;
+  border-bottom: 3px solid var(--mainColor) !important;
+}
+
+.promotion-section button:hover {
+  color: var(--primaryColor) !important;
+  border-bottom: 3px solid var(--primaryColor) !important;
 }
 
 .products-section .product.primary {
@@ -84,4 +101,16 @@ section {
 .products-section .category {
   top: 20px;
   left: 22px;
+}
+
+@media screen and (max-width: 768px) {
+  .partners-section .partners {
+    width: 100%;
+    margin-left: 0;
+    transform: rotate(0);
+  }
+
+  .promotion-section {
+    margin-top: 6em;
+  }
 }

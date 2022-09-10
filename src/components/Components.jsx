@@ -1,3 +1,9 @@
+export const Content = (props) => {
+  return (
+    props.children
+  );
+}
+
 export const Container = (props) => {
   return <div className={`container ${props.className}`}>{props.children}</div>;
 };
