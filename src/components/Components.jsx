@@ -5,7 +5,7 @@ export const Container = (props) => {
 export const Button = (props) => {
   return (
     <button type={props.type} className={`btn ${props.className}`} onClick={props.onClick}>
-      {props.value}
+      {props.value}{props.icon}
     </button>
   );
 };

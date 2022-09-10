@@ -1,0 +1,87 @@
+section {
+  margin-top: 6em;
+}
+
+.text-primary2 {
+  color: var(--primaryColor) !important;
+}
+
+.bg-main {
+  background-color: var(--mainColor);
+}
+
+.bg-primary2, .btn-primary2 {
+  background-color: var(--primaryColor);
+}
+
+.btn-primary2:hover {
+  background-color: #2aa73f !important;
+}
+
+.py-25 {
+  padding-top: .9em;
+  padding-bottom: .8em;
+}
+
+.rounded-10 {
+  border-radius: 10px;
+}
+
+.subtitle {
+  display: inline-block;
+  background-color: #deffe4;
+  color: var(--primaryColor);
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 4.5px 10px 4px 10px;
+  margin-bottom: 8px;
+}
+
+.title {
+  color: var(--mainColor);
+}
+
+.hero-section {
+  margin-top: 3em;
+}
+
+.hero-section .title span {
+  background-color: var(--primaryColor);
+  color: white;
+  user-select: none;
+}
+
+.hero-section .description-border {
+  display: block;
+  width: 6px;
+  height: 36px;
+  background-color: #743DCD;
+  border-radius: 20px;
+}
+
+.tes {
+  color: red;
+}
+
+.products-section .product.primary {
+  min-height: 423px;
+}
+
+.products-section .product {
+  min-height: 200px;
+  background-position: 0 40%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.products-section .product-content, .products-section .category {
+  background-color: rgba(37, 35, 54, 0.3);
+  backdrop-filter: blur(6px);
+  color: white;
+}
+
+.products-section .category {
+  top: 20px;
+  left: 22px;
+}
