@@ -120,7 +120,7 @@ export const ProductsSection = () => {
       <div className="container">
         <div className="text-center">
           <div className="subtitle">Best Products</div>
-          <h2 className="title fw-bold lh-sm mb-5">This week's <span className="text-primary2">newest</span> and <br /><span className="text-primary2">best selling</span> products</h2>
+          <h1 className="title fw-bold lh-sm mb-5">This week's <span className="text-primary2">newest</span> and <br /><span className="text-primary2">best selling</span> products</h1>
         </div>
         <div className="row justify-content-between m-0">
           <div className="col-lg-8 col-md-6 mb-md-0 mb-4">
