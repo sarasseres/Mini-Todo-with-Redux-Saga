@@ -1,3 +1,4 @@
+import './style.css';
 export const Content = () => {};
 
 export const Header = (props) => {
@@ -18,3 +19,11 @@ export const Card = (props) => {
     </div>
   );
 };
+
+// export const Buttoni = (val) => {
+//   return (
+//     <button type="button" class="btn btn-outline-secondary">
+//       <p>{val.text}</p>
+//     </button>
+//   );
+// };
