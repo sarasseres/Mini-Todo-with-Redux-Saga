@@ -6,7 +6,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="navbar navbar-expand-lg py-3 mb-4">
+    <nav className="navbar navbar-expand-lg pt-3">
       <div className="container">
         <a className="navbar-brand" href="/">
           <h2 className="fw-bold mt-2">B <span>H</span><span className="rotate">EV</span>I N</h2>

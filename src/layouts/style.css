@@ -1,25 +1,25 @@
-span {
+.navbar span, footer span {
   display: inline-block;
   color: var(--primaryColor);
 }
 
-.rotate {
+.navbar .rotate, footer .rotate {
   transform: rotate(-90deg);
 }
 
-.nav-link {
+.navbar .nav-link {
   color: var(--mainColor) !important;
 }
 
-.nav-link:hover {
+.navbar .nav-link:hover {
   color: var(--primaryColor) !important;
 }
 
-.nav-link.active {
+.navbar .nav-link.active {
   color: var(--primaryColor) !important;
 }
 
-.fill {
+.navbar .fill {
   position: absolute;
   top: 0;
   right: -4px;
@@ -29,28 +29,28 @@ span {
   border-radius: 100%;
 }
 
-.btn-login {
+.navbar .btn-login {
   background-color: var(--primaryColor);
   color: white;
   font-weight: 600;
 }
 
-.link, .sosial, .nav-link {
+footer .link, footer .sosial, .navbar .nav-link {
   transition: all .2s;
 }
 
-.link:hover {
+footer .link:hover {
   color: var(--primaryColor) !important;
 }
 
-.sosial {
+footer .sosial {
   background-color: #d6ffdc;
   color: var(--primaryColor);
   border-radius: 100%;
   padding: 6px 10px;
 }
 
-.sosial:hover {
+footer .sosial:hover {
   color: white;
   background-color: var(--primaryColor);
 }
