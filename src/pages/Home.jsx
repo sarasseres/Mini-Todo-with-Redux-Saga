@@ -1,9 +1,13 @@
+import { useNavigate } from "react-router-dom";
+
 import * as Components from "../components/Components";
 import * as HomeComponents from "../components/Home/HomeComponents"; // EDIT
 
 import "../components/Home/style.css"; // EDIT
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <section className="hero-section">
@@ -108,7 +112,7 @@ const Home = () => {
                 <small className="category fw-semibold position-absolute py-1 px-3">LADIES</small>
                 <div className="product-content d-flex justify-content-between align-items-center py-25 px-4">
                   <p className="fw-semibold text-white normal m-0">Rp. 400.000,00</p>
-                  <button className="btn btn-dark fw-semibold normal px-md-4 px-3 rounded-0">
+                  <button onClick={()=>navigate("/products/product")} className="btn btn-dark fw-semibold normal px-md-4 px-3 rounded-0">
                     BUY NOW
                     <span className="text-primary2 ms-2"><i class="fa-solid fa-arrow-right"></i></span>
                   </button>
@@ -122,7 +126,7 @@ const Home = () => {
                     <small className="category fw-semibold position-absolute py-1 px-3">MEN</small>
                     <div className="product-content d-flex justify-content-between align-items-center py-25 px-4">
                       <p className="fw-semibold text-white normal m-0">Rp. 280.000,00</p>
-                      <button className="btn btn-dark fw-semibold normal px-md-4 px-3 rounded-0">
+                      <button onClick={()=>navigate("/products/product")} className="btn btn-dark fw-semibold normal px-md-4 px-3 rounded-0">
                         BUY NOW
                         <span className="text-primary2 ms-2"><i class="fa-solid fa-arrow-right"></i></span>
                       </button>
@@ -134,7 +138,7 @@ const Home = () => {
                     <small className="category fw-semibold position-absolute py-1 px-3">LADIES</small>
                     <div className="product-content d-flex justify-content-between align-items-center py-25 px-4">
                       <p className="fw-semibold text-white normal m-0">Rp. 450.000,00</p>
-                      <button className="btn btn-dark fw-semibold normal px-md-4 px-3 rounded-0">
+                      <button onClick={()=>navigate("/products/product")} className="btn btn-dark fw-semibold normal px-md-4 px-3 rounded-0">
                         BUY NOW
                         <span className="text-primary2 ms-2"><i class="fa-solid fa-arrow-right"></i></span>
                       </button>
@@ -148,7 +152,7 @@ const Home = () => {
                 <small className="category fw-semibold position-absolute py-1 px-3">LADIES</small>
                 <div className="product-content d-flex justify-content-between align-items-center py-25 px-4">
                   <p className="fw-semibold text-white normal m-0">Rp. 519.999,00</p>
-                  <button className="btn btn-dark fw-semibold normal px-md-4 px-3 rounded-0">
+                  <button onClick={()=>navigate("/products/product")} className="btn btn-dark fw-semibold normal px-md-4 px-3 rounded-0">
                     BUY NOW
                     <span className="text-primary2 ms-2"><i class="fa-solid fa-arrow-right"></i></span>
                   </button>
@@ -160,7 +164,7 @@ const Home = () => {
                 <small className="category fw-semibold position-absolute py-1 px-3">MEN</small>
                 <div className="product-content d-flex justify-content-between align-items-center py-25 px-4">
                   <p className="fw-semibold text-white normal m-0">Rp. 340.000,00</p>
-                  <button className="btn btn-dark fw-semibold normal px-md-4 px-3 rounded-0">
+                  <button onClick={()=>navigate("/products/product")} className="btn btn-dark fw-semibold normal px-md-4 px-3 rounded-0">
                     BUY NOW
                     <span className="text-primary2 ms-2"><i class="fa-solid fa-arrow-right"></i></span>
                   </button>
