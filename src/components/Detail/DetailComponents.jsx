@@ -8,34 +8,34 @@ export const Content = () => {
 
 // export const DetailProductCarousel = () => {
 //   return (
-//     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-//       <div class="carousel-indicators">
-//         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+//     <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="true">
+//       <div className="carousel-indicators">
+//         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
 //         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
 //         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
 //         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
 //       </div>
-//       <div class="carousel-inner">
-//         <div class="carousel-item active">
-//           <img src={require("../../assets/images/khaki-cord-pocket-front-overshirt.jpg")} class="d-block w-100" alt="Khaki Cord Shirt" />
+//       <div className="carousel-inner">
+//         <div className="carousel-item active">
+//           <img src={require("../../assets/images/khaki-cord-pocket-front-overshirt.jpg")} className="d-block w-100" alt="Khaki Cord Shirt" />
 //         </div>
-//         <div class="carousel-item">
-//           <img src={require("../../assets/images/khaki-cord-pocket-front-overshirt-2.jpg")} class="d-block w-100" alt="Khaki Cord Shirt 2" />
+//         <div className="carousel-item">
+//           <img src={require("../../assets/images/khaki-cord-pocket-front-overshirt-2.jpg")} className="d-block w-100" alt="Khaki Cord Shirt 2" />
 //         </div>
-//         <div class="carousel-item">
-//           <img src={require("../../assets/images/khaki-cord-pocket-front-overshirt-3.jpg")} class="d-block w-100" alt="Khaki Cord Shirt 3" />
+//         <div className="carousel-item">
+//           <img src={require("../../assets/images/khaki-cord-pocket-front-overshirt-3.jpg")} className="d-block w-100" alt="Khaki Cord Shirt 3" />
 //         </div>
-//         <div class="carousel-item">
-//           <img src={require("../../assets/images/khaki-cord-pocket-front-overshirt-4.jpg")} class="d-block w-100" alt="Khaki Cord Shirt 4" />
+//         <div className="carousel-item">
+//           <img src={require("../../assets/images/khaki-cord-pocket-front-overshirt-4.jpg")} className="d-block w-100" alt="Khaki Cord Shirt 4" />
 //         </div>
 //       </div>
-//       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-//         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-//         <span class="visually-hidden">Previous</span>
+//       <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+//         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+//         <span className="visually-hidden">Previous</span>
 //       </button>
-//       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-//         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-//         <span class="visually-hidden">Next</span>
+//       <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+//         <span className="carousel-control-next-icon" aria-hidden="true"></span>
+//         <span className="visually-hidden">Next</span>
 //       </button>
 //     </div>
 //   );
