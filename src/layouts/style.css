@@ -35,6 +35,10 @@
   font-weight: 600;
 }
 
+footer {
+  margin-top: 7em;
+}
+
 footer .link, footer .sosial, .navbar .nav-link {
   transition: all .2s;
 }

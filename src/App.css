@@ -18,6 +18,10 @@ a {
   text-decoration: none;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .bg-light-primary {
   background-color: #f1fff8;
 }
