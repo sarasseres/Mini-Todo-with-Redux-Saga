@@ -71,3 +71,7 @@ footer .sosial:hover {
   object-position:center;
   float:left;
 }
+table {
+  border: none;
+  
+}
