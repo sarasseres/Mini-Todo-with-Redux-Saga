@@ -27,52 +27,52 @@ const Products = () => {
             <ProductsComponents.Card image={require('../assets/images/products/products2.jpg')} title="Ini Card Terisi" />
           </div>
           <div className="col-3 my-5">
-            <ProductsComponents.Card image={require('../assets/images/products/products3.jpg')} button="Ini Card Mempunyai Button" />
+            <ProductsComponents.Card image={require('../assets/images/products/products3.jpg')} title="Ini Card" />
           </div>
           <div className="col-3 my-5">
-            <ProductsComponents.Card image={require('../assets/images/products/products4.jpg')} />
+            <ProductsComponents.Card image={require('../assets/images/products/products4.jpg')} title="Ini Card" />
           </div>
         </div>
         <div className="row justify-content-between">
           <div className="col-3 my-5">
-            <ProductsComponents.Card image={require('../assets/images/products/products1.jpg')} title="Ini Card" button="Ini Card Button" />
+            <ProductsComponents.Card image={require('../assets/images/products/products1.jpg')} title="Ini Card" />
           </div>
           <div className="col-3 my-5">
             <ProductsComponents.Card image={require('../assets/images/products/products2.jpg')} title="Ini Card Terisi" />
           </div>
           <div className="col-3 my-5">
-            <ProductsComponents.Card image={require('../assets/images/products/products3.jpg')} button="Ini Card Mempunyai Button" />
+            <ProductsComponents.Card image={require('../assets/images/products/products3.jpg')} title="Ini Card" />
           </div>
           <div className="col-3 my-5">
-            <ProductsComponents.Card image={require('../assets/images/products/products4.jpg')} />
+            <ProductsComponents.Card image={require('../assets/images/products/products4.jpg')} title="Ini Card" />
           </div>
         </div>
         <div className="row justify-content-between">
           <div className="col-3 my-5">
-            <ProductsComponents.Card image={require('../assets/images/products/products1.jpg')} title="Ini Card" button="Ini Card Button" />
+            <ProductsComponents.Card image={require('../assets/images/products/products1.jpg')} title="Ini Card" />
           </div>
           <div className="col-3 my-5">
             <ProductsComponents.Card image={require('../assets/images/products/products2.jpg')} title="Ini Card Terisi" />
           </div>
           <div className="col-3 my-5">
-            <ProductsComponents.Card image={require('../assets/images/products/products3.jpg')} button="Ini Card Mempunyai Button" />
+            <ProductsComponents.Card image={require('../assets/images/products/products3.jpg')} title="Ini Card" />
           </div>
           <div className="col-3 my-5">
-            <ProductsComponents.Card image={require('../assets/images/products/products4.jpg')} />
+            <ProductsComponents.Card image={require('../assets/images/products/products4.jpg')} title="Ini Card" />
           </div>
         </div>{' '}
         <div className="row justify-content-between">
           <div className="col-3 my-5">
-            <ProductsComponents.Card image={require('../assets/images/products/products1.jpg')} title="Ini Card" button="Ini Card Button" />
+            <ProductsComponents.Card image={require('../assets/images/products/products1.jpg')} title="Ini Card" />
           </div>
           <div className="col-3 my-5">
             <ProductsComponents.Card image={require('../assets/images/products/products2.jpg')} title="Ini Card Terisi" />
           </div>
           <div className="col-3 my-5">
-            <ProductsComponents.Card image={require('../assets/images/products/products3.jpg')} button="Ini Card Mempunyai Button" />
+            <ProductsComponents.Card image={require('../assets/images/products/products3.jpg')} title="Ini Card" />
           </div>
           <div className="col-3 my-5">
-            <ProductsComponents.Card image={require('../assets/images/products/products4.jpg')} />
+            <ProductsComponents.Card image={require('../assets/images/products/products4.jpg')} title="Ini Card" />
           </div>
         </div>
       </Components.Container>

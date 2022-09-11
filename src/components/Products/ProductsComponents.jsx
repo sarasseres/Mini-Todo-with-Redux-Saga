@@ -12,6 +12,12 @@ export const Card = (props) => {
       <div class="card-body">
         <h4 class="card-title text-center">{props.title}</h4>
         <p class="text-center text-lg">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <button onClick={props.onClick} className="btn btn-dark fw-semibold normal px-md-4 mx- text-align-center px-3 rounded-0" align="center">
+          BUY NOW
+          <span className="text-primary2 ms-2">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </button>
       </div>
     </div>
   );
