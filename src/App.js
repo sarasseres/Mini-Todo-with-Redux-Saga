@@ -1,16 +1,16 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
-import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import './App.css';
 
-import Navbar from "./layouts/Navbar";
-import Footer from "./layouts/Footer";
+import Navbar from './layouts/Navbar';
+import Footer from './layouts/Footer';
 
-import Home from "./pages/Home";
-import Products from "./pages/Products";
-import Detail from "./pages/Detail";
-import About from "./pages/About";
+import Home from './pages/Home';
+import Products from './pages/Products';
+import Detail from './pages/Detail';
+import About from './pages/About';
 
 function App() {
   return (
