@@ -10,11 +10,8 @@ export const Card = (props) => {
     <div class="card">
       <img src={props.image} class="card-img-top" alt="gambar" />
       <div class="card-body">
-        <h4 class="card-title">{props.title}</h4>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-outline-success">
-          {props.button}
-        </a>
+        <h4 class="card-title text-center">{props.title}</h4>
+        <p class="text-center text-lg">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       </div>
     </div>
   );
