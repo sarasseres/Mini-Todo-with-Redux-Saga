@@ -1,6 +1,3 @@
-import './style.css';
-export const Content = () => {};
-
 export const Header = (props) => {
   return <h1>{props.value}</h1>;
 };
