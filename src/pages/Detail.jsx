@@ -11,6 +11,7 @@ const Detail = () => {
   return (
     <Components.Container>
       <h1>Halaman Detail Product</h1>
+      <DetailComponents.DetailProduct />
     </Components.Container>
   );
 }

@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+.detail {
+    display: flex;
+}
+
+.detail-img {
+    width: 80%;
+}
+
+.detail-img-header img {
+    width: 100%;
+}
+
+.detail-img-small img {
+    width: 20%;
+    border: 3px solid transparent;
+    margin: 5px 3px 0 -3px;
+}
+
+.detail-img-small img:hover {
+    border: 3px solid var(--primaryColor);
+    cursor: pointer;
+}
+
+.desc {
+    padding: 30px;
+}
+
+.desc .form-select {
+    width: 135px;
+}
+
+.qty-button {
+    display: flex;
+    align-items: center;
+}
+
+.qty-button input {
+    width: 5%;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+    text-align: center;
+}
+
+.qty-button input:focus {
+    border: 1px solid var(--primaryColor);
+}
+
+.qty-button button {
+    margin-left: 20px;
+    padding: 10px;
+}
