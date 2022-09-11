@@ -64,3 +64,14 @@ footer .sosial:hover {
   text-align: center;
   padding: 30px 10px 24px 10px;
 }
+.foto-profil {
+  width:150px;
+  height:150px;
+  object-fit:contain;
+  object-position:center;
+  float:left;
+}
+table {
+  border: none;
+  
+}
