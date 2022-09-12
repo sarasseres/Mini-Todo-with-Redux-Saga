@@ -18,59 +18,59 @@ const Products = () => {
           <Components.Button value="MEN" className="me-4 cursor-pointer btn-outline-secondary" onClick={() => navigate('/products/product')}></Components.Button>
           <Components.Button value="KIDS" className="me-4 cursor-pointer btn-outline-secondary" onClick={() => navigate('/products/product')}></Components.Button>
         </div>
-        <div className="row justify-content-between">
-          <div className="col-3 my-5">
+        <div className="row justify-content-center">
+          <div className="col-lg-3 col-md-6 col-10 my-5">
             <ProductsComponents.Card image={require('../assets/images/products/products1.jpg')} title="Sky Blue Hoodie" onClick={() => navigate('/products/product')} button="Ini Card Button" />
           </div>
-          <div className="col-3 my-5">
+          <div className="col-lg-3 col-md-6 col-10 my-5">
             <ProductsComponents.Card image={require('../assets/images/products/products2.jpg')} title="Sky Blue Hoodie" onClick={() => navigate('/products/product')} />
           </div>
-          <div className="col-3 my-5">
+          <div className="col-lg-3 col-md-6 col-10 my-5">
             <ProductsComponents.Card image={require('../assets/images/products/products3.jpg')} title="Sky Blue Hoodie" onClick={() => navigate('/products/product')} />
           </div>
-          <div className="col-3 my-5">
+          <div className="col-lg-3 col-md-6 col-10 my-5">
             <ProductsComponents.Card image={require('../assets/images/products/products4.jpg')} title="Sky Blue Hoodie" onClick={() => navigate('/products/product')} />
           </div>
         </div>
         <div className="row justify-content-between">
-          <div className="col-3 my-5">
+          <div className="col-lg-3 col-md-6 col-10 my-5">
             <ProductsComponents.Card image={require('../assets/images/products/products1.jpg')} title="Sky Blue Hoodie" onClick={() => navigate('/products/product')} />
           </div>
-          <div className="col-3 my-5">
+          <div className="col-lg-3 col-md-6 col-10 my-5">
             <ProductsComponents.Card image={require('../assets/images/products/products2.jpg')} title="Sky Blue Hoodie" onClick={() => navigate('/products/product')} />
           </div>
-          <div className="col-3 my-5">
+          <div className="col-lg-3 col-md-6 col-10 my-5">
             <ProductsComponents.Card image={require('../assets/images/products/products3.jpg')} title="Sky Blue Hoodie" onClick={() => navigate('/products/product')} />
           </div>
-          <div className="col-3 my-5">
+          <div className="col-lg-3 col-md-6 col-10 my-5">
             <ProductsComponents.Card image={require('../assets/images/products/products4.jpg')} title="Sky Blue Hoodie" onClick={() => navigate('/products/product')} />
           </div>
         </div>
         <div className="row justify-content-between">
-          <div className="col-3 my-5">
+          <div className="col-lg-3 col-md-6 col-10 my-5">
             <ProductsComponents.Card image={require('../assets/images/products/products1.jpg')} title="Sky Blue Hoodie" onClick={() => navigate('/products/product')} />
           </div>
-          <div className="col-3 my-5">
+          <div className="col-lg-3 col-md-6 col-10 my-5">
             <ProductsComponents.Card image={require('../assets/images/products/products2.jpg')} title="Sky Blue Hoodie" onClick={() => navigate('/products/product')} />
           </div>
-          <div className="col-3 my-5">
+          <div className="col-lg-3 col-md-6 col-10 my-5">
             <ProductsComponents.Card image={require('../assets/images/products/products3.jpg')} title="Sky Blue Hoodie" onClick={() => navigate('/products/product')} />
           </div>
-          <div className="col-3 my-5">
+          <div className="col-lg-3 col-md-6 col-10 my-5">
             <ProductsComponents.Card image={require('../assets/images/products/products4.jpg')} title="Sky Blue Hoodie" onClick={() => navigate('/products/product')} />
           </div>
         </div>{' '}
         <div className="row justify-content-between">
-          <div className="col-3 my-5">
+          <div className="col-lg-3 col-md-6 col-10 my-5">
             <ProductsComponents.Card image={require('../assets/images/products/products1.jpg')} title="Sky Blue Hoodie" onClick={() => navigate('/products/product')} />
           </div>
-          <div className="col-3 my-5">
+          <div className="col-lg-3 col-md-6 col-10 my-5">
             <ProductsComponents.Card image={require('../assets/images/products/products2.jpg')} title="Sky Blue Hoodie" onClick={() => navigate('/products/product')} />
           </div>
-          <div className="col-3 my-5">
+          <div className="col-lg-3 col-md-6 col-10 my-5">
             <ProductsComponents.Card image={require('../assets/images/products/products3.jpg')} title="Sky Blue Hoodie" onClick={() => navigate('/products/product')} />
           </div>
-          <div className="col-3 my-5">
+          <div className="col-lg-3 col-md-6 col-10 my-5">
             <ProductsComponents.Card image={require('../assets/images/products/products4.jpg')} title="Sky Blue Hoodie" onClick={() => navigate('/products/product')} />
           </div>
         </div>
