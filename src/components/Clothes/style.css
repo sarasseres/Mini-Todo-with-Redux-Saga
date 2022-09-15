@@ -1,0 +1,29 @@
+.btn-main {
+  background-color: var(--primaryColor);
+}
+
+.btn-main:hover {
+  background-color: #2dad43 !important;
+}
+
+.card {
+  border: none;
+}
+
+.card-desc {
+  display: -webkit-box;
+  max-width: 94%;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: auto;
+}
+
+.hr {
+  display: block;
+  width: 30%;
+  height: 3px;
+  background-color: var(--primaryColor);
+  border-radius: 20px;
+  margin: auto;
+}
