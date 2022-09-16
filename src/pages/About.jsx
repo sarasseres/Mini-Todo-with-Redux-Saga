@@ -3,7 +3,6 @@ import * as AboutComponents from "../components/About/AboutComponents"; // EDIT
 
 import "../components/About/style.css"; // EDIT
 
-
 const About = () => {
   return (
     <Components.Container>

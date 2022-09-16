@@ -5,6 +5,25 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const navs = [
+    {
+      title: "Home",
+      path: "/"
+    },
+    {
+      title: "Clothes",
+      path: "/clothes"
+    },
+    {
+      title: "Cloth",
+      path: "/clothes/cloth"
+    },
+    {
+      title: "About",
+      path: "/about"
+    }
+  ];
+
   return (
     <nav className="navbar navbar-expand-lg pt-3">
       <div className="container">
@@ -24,18 +43,20 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div className="navbar-nav mx-auto">
-            <div onClick={() => navigate("/")} className={`nav-link cursor-pointer fw-medium normal me-lg-4 ${location.pathname === "/" ? " active" : ""}`}>
-              Home
-            </div>
-            <div onClick={() => navigate("/products")} className={`nav-link cursor-pointer fw-medium normal me-lg-4 ${location.pathname === "/products" ? " active" : ""}`}>
-              Products
-            </div>
-            <div onClick={() => navigate("/products/product")} className={`nav-link cursor-pointer fw-medium normal me-lg-4 ${location.pathname === "/products/product" ? " active" : ""}`}>
-              Product
-            </div>
-            <div onClick={() => navigate("/about")} className={`nav-link cursor-pointer fw-medium normal me-lg-4 ${location.pathname === "/about" ? " active" : ""}`}>
-              About
-            </div>
+            {navs.map(
+              (el, id) => {
+                return (
+                <div
+                  key={id}
+                  onClick={() => navigate(el.path)}
+                  className={`nav-link cursor-pointer fw-medium me-lg-4 ${
+                    location.pathname === el.path ? "active" : ""
+                  }`}
+                >
+                  {el.title}
+                </div>)
+              }
+            )}
           </div>
           <div className="d-none d-lg-flex align-items-center">
             <div className="position-relative me-5 cursor-pointer">

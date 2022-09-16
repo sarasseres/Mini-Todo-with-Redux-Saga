@@ -1,3 +1,5 @@
+import { useParams } from "react-router-dom";
+
 // export const DetailProductCarousel = () => {
 //   return (
 //     <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="true">
@@ -67,8 +69,22 @@
 //     </div>
 //   );
 // }
+
+function slugToTitle(slug) {
+  let prevTitle = slug.split("-");
+  let afterTitle = [];
+
+  for (let i = 0; i < prevTitle.length; i++) {
+    afterTitle.push(prevTitle[i][0].toUpperCase() + prevTitle[i].slice(1));
+  }
+
+  return afterTitle.join(" ");
+}
 
 export const DetailProduct = () => {
+  const params = useParams();
+  const title = params.slug === "cloth" ? "Khaki Cord Shirt" : slugToTitle(params.slug);
+
   return (
     <div className="detail mt-5">
       <div className="row m-0 justify-content-between align-items-center">
@@ -76,28 +92,24 @@ export const DetailProduct = () => {
           <div className="detail-img">
             <div className="detail-img-header">
               <img
-                src={require("../../assets/images/products/khaki-cord-pocket-overshirt.jpg")}
+                src={require(`../../assets/images/products/${title === "Khaki Cord Shirt" ? "khaki-cord-pocket-overshirt" : params.slug }.jpg`)}
                 alt="Khaki Cord Shirt"
               />
             </div>
 
-            <div className="detail-img-small">
-              <img
-                src={require("../../assets/images/products/khaki-cord-pocket-overshirt.jpg")}
-                alt="Khaki Cord Shirt"
-              />
-              <img
-                src={require("../../assets/images/products/khaki-cord-pocket-overshirt-2.jpg")}
-                alt="Khaki Cord Shirt 1"
-              />
-              <img
-                src={require("../../assets/images/products/khaki-cord-pocket-overshirt-3.jpg")}
-                alt="Khaki Cord Shirt 2"
-              />
-              <img
-                src={require("../../assets/images/products/khaki-cord-pocket-overshirt-4.jpg")}
-                alt="Khaki Cord Shirt 3"
-              />
+            <div className="detail-img-small d-flex">
+              <div className="img" style={{
+                backgroundImage: `url(${require(`../../assets/images/products/${title === "Khaki Cord Shirt" ? "khaki-cord-pocket-overshirt" : params.slug }.jpg`)})`
+              }} />
+              <div className="img" style={{
+                backgroundImage: `url(${require(`../../assets/images/products/${title === "Khaki Cord Shirt" ? "khaki-cord-pocket-overshirt-2" : params.slug }.jpg`)})`
+              }} />
+              <div className="img" style={{
+                backgroundImage: `url(${require(`../../assets/images/products/${title === "Khaki Cord Shirt" ? "khaki-cord-pocket-overshirt-3" : params.slug }.jpg`)})`
+              }} />
+              <div className="img" style={{
+                backgroundImage: `url(${require(`../../assets/images/products/${title === "Khaki Cord Shirt" ? "khaki-cord-pocket-overshirt-4" : params.slug }.jpg`)})`
+              }} />
             </div>
           </div>
         </div>
@@ -108,16 +120,16 @@ export const DetailProduct = () => {
                 <a href="/" className="fw-semibold text-primary2">Home</a>
               </li>
               <li className="breadcrumb-item">
-                <a href="/products" className="fw-semibold text-primary2">Products</a>
+                <a href="/clothes" className="fw-semibold text-primary2">Clothes</a>
               </li>
               <li className="breadcrumb-item active" aria-current="page">
-                Khaki Cord Shirt
+                {title}
               </li>
             </ol>
           </nav>
           <div className="desc p-0">
-            <h3 className="mt-5">Khaki Cord Shirt</h3>
-            <h5 className="mt-2">Rp150.000</h5>
+            <h3 className="mt-5">{title}</h3>
+            <h5 className="mt-3">Rp150.000</h5>
             <select className="form-select my-4" id="inputGroupSelect02">
               <option>Select Size</option>
               <option value="s">S</option>
