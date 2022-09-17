@@ -83,8 +83,6 @@ export const Team = () => {
                     </div>
                 </div>
             </div>
-            {/* <img className="irham" src={require("../../assets/images/about/irham.jpg")} alt="coba" /> */}
-            {/* <div className="kotak"></div> */}
         </div>
     );
 };
