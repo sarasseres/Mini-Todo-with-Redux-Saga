@@ -1,9 +1,15 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Navigate } from "react-router-dom";
 import "./style.css";
+
+const Logout = () => {
+  localStorage.setItem("login", false);
+  window.location.replace("/login");
+}
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const auth = localStorage.getItem("login") === "true";
 
   const navs = [
     {
@@ -63,12 +69,19 @@ const Navbar = () => {
               <img src={require('../assets/icons/cart.png')} alt="cart" width="24" />
               <div className="fill"></div>
             </div>
-            <img src={require('../assets/icons/user.png')} alt="cart" width="19" className="cursor-pointer" />
+            <img src={require('../assets/icons/user.png')} alt="cart" width="19" className="cursor-pointer" onClick={()=>navigate("/login")} />
           </div>
-          <button className="btn btn-login w-100 d-block d-lg-none mt-3" onClick={()=>navigate("/")}>
-            <i className="fa-solid fa-user me-2"></i>
-            Login
-          </button>
+          {auth ? (
+            <button className="btn btn-login w-100 d-block d-lg-none mt-3" onClick={()=>Logout()}>
+              <i className="fa-solid fa-user me-2"></i>
+              Logout
+            </button>
+          ) : (
+            <button className="btn btn-login w-100 d-block d-lg-none mt-3" onClick={()=>navigate("/login")}>
+              <i className="fa-solid fa-user me-2"></i>
+              Login
+            </button>
+          )}
         </div>
       </div>
     </nav>

@@ -23,14 +23,14 @@ export const HeroSection = () => {
             </h1>
             <div className="d-flex align-items-center mt-4 mb-5">
               <div className="description-border"></div>
-              <p className="description fw-medium text-secondary normal m-0 ms-3">
+              <p className="description fw-medium text-secondary m-0 ms-3">
                 Fashion is part of the daily air and it changes all of time,
                 with all the events. We only sell the best and serve you
                 comfortably
               </p>
             </div>
             <div className="d-sm-flex align-items-center">
-              <button className="btn btn-dark text-white fw-semibold normal rounded-3 py-25 px-sm-4 px-5 me-sm-5">
+              <button className="btn btn-dark text-white fw-semibold rounded-0 py-3 px-sm-4 px-5 me-sm-5">
                 Start Shopping
                 <span className="ms-2 text-primary2">
                   <i className="fa-solid fa-chevron-right"></i>
@@ -43,7 +43,7 @@ export const HeroSection = () => {
                 <h3 className="me-3 m-0">
                   <i className="fa-solid fa-circle-play"></i>
                 </h3>
-                <p className="fw-bold normal m-0">Explore More</p>
+                <p className="fw-bold m-0">Explore More</p>
               </a>
             </div>
           </div>

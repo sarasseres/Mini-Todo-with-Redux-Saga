@@ -1,5 +1,6 @@
 .btn-main {
   background-color: var(--primaryColor);
+  border: 2px solid var(--mainColor) !important;
 }
 
 .btn-main:hover {
