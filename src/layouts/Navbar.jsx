@@ -1,4 +1,4 @@
-import { useLocation, useNavigate, Navigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./style.css";
 
 const Logout = () => {
@@ -72,7 +72,7 @@ const Navbar = () => {
             {auth ? (
               <div className="d-flex align-items-center cursor-pointer ms-5" onClick={()=>Logout()}>
                 <img src={require('../assets/icons/user.png')} alt="cart" width="19"/>
-                <p className="m-0 ms-3 fw-semibold m-0">{localStorage.getItem("username")}</p>
+                <p className="m-0 ms-3 fw-semibold m-0">{localStorage.getItem("username") || "User"}</p>
               </div>
             ) : (
               <div className="ms-5">
