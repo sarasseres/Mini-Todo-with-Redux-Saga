@@ -11,6 +11,7 @@ const Clothes = () => {
 
   const [clothes, setClothes] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     console.log('Fetching Data...');
@@ -76,8 +77,9 @@ const Clothes = () => {
   return (
     <>
       <Components.Container>
+        <ModalProduct showModal={showModal} toggle={()=>setShowModal(!showModal)} />
         <div className="text-center mt-5">
-          <button className="btn btn-main fw-semibold text-white py-2 px-4 rounded-0">ADD CLOTH</button>
+          <button className="btn btn-main fw-semibold text-white py-2 px-4 rounded-0" onClick={()=>setShowModal(!showModal)}>ADD CLOTH</button>
         </div>
         <div className="row justify-content-md-evenly gap-lg-5 justify-content-center mt-4">
           {isLoading ? (

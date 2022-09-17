@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./style.css";
 
 const Input = (props) => {
   return (
@@ -49,13 +50,16 @@ const Login = () => {
   const [seePassword, setSeePassword] = useState(false);
 
   useEffect(()=>{
-    let form = document.getElementById("loginForm");
+    let password = document.getElementById("password");
+    let confirmPassword = document.getElementById("confirmPassword");
 
-    form.addEventListener("click", function(e) {
-      if (e.target.id === "seePassword") {
-        console.log("ok");
-      }
-    });
+    if (seePassword) {
+      password.type = "text";
+      confirmPassword.type = "text";
+    } else {
+      password.type = "password";
+      confirmPassword.type = "password";
+    }
   }, [seePassword]);
   
   return (
@@ -108,12 +112,12 @@ const Login = () => {
           } />
         </div>
         <div className="d-flex align-items-center">
-          <div className="position-relative">
+          <div className="position-relative see-password">
             <input type="checkbox" id="seePassword" name="seePassword" className="form-check-input" onClick={()=>setSeePassword(!seePassword)} />
-            <i className="fa-solid fa-eye-slash" id="hide"></i>
-            <i className="fa-solid fa-eye" id="show"></i>
+            <h5 className={`m-0 mt-1 ${seePassword ? "d-none" : "d-block"}`} id="hide"><i className="fa-solid fa-eye-slash"></i></h5>
+            <h5 className={`m-0 mt-1 ${seePassword ? "d-block" : "d-none"}`} id="show"><i className="fa-solid fa-eye"></i></h5>
           </div>
-          <label htmlFor="seePassword" className="form-label fw-medium normal mt-2 ms-3">See Password</label>
+          <label htmlFor="seePassword" className="form-label fw-semibold normal ms-3 mt-2 user-select-none">See Password</label>
         </div>
         <button type="submit" className="btn btn-success w-100 mt-4 fw-semibold py-25">Click Me</button>
       </form>

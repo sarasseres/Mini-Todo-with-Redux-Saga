@@ -65,11 +65,20 @@ const Navbar = () => {
             )}
           </div>
           <div className="d-none d-lg-flex align-items-center">
-            <div className="position-relative me-5 cursor-pointer">
+            <div className="position-relative cursor-pointer">
               <img src={require('../assets/icons/cart.png')} alt="cart" width="24" />
               <div className="fill"></div>
             </div>
-            <img src={require('../assets/icons/user.png')} alt="cart" width="19" className="cursor-pointer" onClick={()=>navigate("/login")} />
+            {auth ? (
+              <div className="d-flex align-items-center cursor-pointer ms-5" onClick={()=>Logout()}>
+                <img src={require('../assets/icons/user.png')} alt="cart" width="19"/>
+                <p className="m-0 ms-3 fw-semibold m-0">{localStorage.getItem("username")}</p>
+              </div>
+            ) : (
+              <div className="ms-5">
+                <img src={require('../assets/icons/user.png')} alt="cart" width="19" className="cursor-pointer" onClick={()=>navigate("/login")} />
+              </div>
+            )}
           </div>
           {auth ? (
             <button className="btn btn-login w-100 d-block d-lg-none mt-3" onClick={()=>Logout()}>

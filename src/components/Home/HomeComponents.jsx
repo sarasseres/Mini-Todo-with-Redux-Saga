@@ -57,8 +57,8 @@ export const HeroSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
 export const PartnersSection = () => {
   return (
@@ -109,7 +109,7 @@ export const PromotionSection = () => {
         </div>
       </div>
     </section>
-  );
+  )
 }
 
 export const ProductsSection = () => {
@@ -190,5 +190,15 @@ export const ProductsSection = () => {
         </div>
       </div>
     </section>
-  );
+  )
+}
+
+export const TestimonialsSection = () => {
+  return (
+    <section className="testimonials-section">
+      <div className="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam necessitatibus voluptates autem et labore voluptatem, sunt repudiandae optio non, consequatur totam dolorum maiores exercitationem? Repellendus sapiente temporibus doloremque explicabo distinctio!</p>
+      </div>
+    </section>
+  )
 }

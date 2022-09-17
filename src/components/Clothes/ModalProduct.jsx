@@ -21,6 +21,7 @@ export const ModalProduct = ({ showModal, toggle }) => {
   //     password: 'password',
   //   };
   // };
+  
   const [isLoading, setIsLoading] = useState(false);
   const [input, setInput] = useState({
     due_date: null,
@@ -67,28 +68,28 @@ export const ModalProduct = ({ showModal, toggle }) => {
                 <Form>
                   <div className="inputContainer">
                     <div>
-                      <label for="title">Title</label>
+                      <label htmlFor="title">Title</label>
                       <input type="text" id="title" name="title" placeholder="Product Title" onChange={(e) => handleChange('title', e.target.value)} />
                     </div>
                     <div>
-                      <label for="prize">Prize</label>
+                      <label htmlFor="prize">Prize</label>
                       <input type="number" id="prize" name="prize" placeholder="5000000" onChange={(e) => handleChange('prize', e.target.value)} />
                     </div>
                     <div>
                       {' '}
-                      <label for="date">Due Date</label>
+                      <label htmlFor="date">Due Date</label>
                       <input type="date" id="date" name="due_date" placeholder="YYYY-MM-DD" onChange={(e) => handleChange('due_date', e.target.value)} />
                     </div>
                     <div>
-                      <label for="announcement">Announcement</label>
+                      <label htmlFor="announcement">Announcement</label>
                       <input type="date" id="announcement" name="announcement" placeholder="YYYY-MM-DD" onChange={(e) => handleChange('announcement', e.target.value)} />
                     </div>
                     <div className="photo">
-                      <label for="poster">Poster</label>
+                      <label htmlFor="poster">Poster</label>
                       <input type="file" id="poster" name="poster" placeholder="poster" onChange={handlePoster} />
                     </div>
                     <div className="description">
-                      <label for="desc">Description</label>
+                      <label htmlFor="desc">Description</label>
                       <textarea id="desc" name="desc" onChange={(e) => handleChange('description', e.target.value)} />
                     </div>
                   </div>
@@ -96,7 +97,6 @@ export const ModalProduct = ({ showModal, toggle }) => {
                     color="success"
                     className="button createButton mx-auto"
                     onClick={submit}
-                    disabled={isLoading ? 'true' : ''}
                     style={{ cursor: `${isLoading ? 'not-allowed' : 'pointer'}`, backgroundColor: `${isLoading ? '#A8CC74' : '#8FBD4B'}` }}
                     title="Create Contest"
                   >

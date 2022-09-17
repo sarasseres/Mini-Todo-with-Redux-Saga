@@ -1,0 +1,15 @@
+.see-password {
+  width: 24px;
+  height: 28px;
+}
+
+#seePassword, #hide, #show {
+  position: absolute;
+  top: 0;
+}
+
+#seePassword {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
