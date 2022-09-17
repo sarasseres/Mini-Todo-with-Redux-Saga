@@ -24,6 +24,9 @@ function App() {
         {/* Dynamic Route */}
         <Route path="/products/product" element={<Detail />} />
       </Routes>
+
+      <Route path="/login" element={<Login/>} />
+
       <Footer />
     </BrowserRouter>
   );
