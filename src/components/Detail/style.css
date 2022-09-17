@@ -16,15 +16,20 @@
 
 .detail-img-header img {
     width: 100%;
+    margin-bottom: 20px;
 }
 
-.detail-img-small img {
-    width: 20%;
-    border: 3px solid transparent;
-    margin: 5px 3px 0 -3px;
+.detail-img-small .img {
+    display: block;
+    width: 25%;
+    height: 120px;
+    background-position: 0 4%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 3px solid white;
 }
 
-.detail-img-small img:hover {
+.detail-img-small .img:hover {
     border: 3px solid var(--primaryColor);
     cursor: pointer;
 }
