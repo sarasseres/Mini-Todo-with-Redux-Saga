@@ -3,7 +3,7 @@
 }
 
 .text-primary2 {
-  color: var(--primaryColor) !important;
+    color: var(--primaryColor) !important;
 }
 
 .detail {
@@ -19,9 +19,17 @@
     margin-bottom: 20px;
 }
 
+.detail-img-small button {
+    width: 100%;
+    border: 3px solid transparent;
+    background-color: transparent;
+    margin-left: -3px;
+}
+
 .detail-img-small .img {
     display: block;
-    width: 25%;
+    /* width: 25%; */
+    width: 100%;
     height: 120px;
     background-position: 0 4%;
     background-repeat: no-repeat;
