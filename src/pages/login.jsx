@@ -5,7 +5,7 @@ import "../components/Login/style.css"; // EDIT
 
 const Login = () => {
   return ( 
-    <Components.Content>
+    <Components.Content className="">
       <LoginComponents.Login /> 
     </Components.Content>
   );
