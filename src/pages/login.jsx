@@ -4,11 +4,11 @@ import * as LoginComponents from "../components/Login/LoginComponents"; // EDIT
 import "../components/Login/style.css"; // EDIT
 
 const Login = () => {
-  return ( 
-    <Components.Content className="">
-      <LoginComponents.Login /> 
+  return (
+    <Components.Content>
+      <LoginComponents.Login />
     </Components.Content>
   );
-}
+};
 
 export default Login;
