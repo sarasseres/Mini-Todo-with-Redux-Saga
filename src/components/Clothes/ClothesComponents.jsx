@@ -7,22 +7,9 @@ export const Header = (props) => {
 };
 
 export const Card = (props) => {
-  const [showModal, setShowModal] = useState(false);
-
   // const openModal = () => {
   //   setShowModal((prev) => !prev);
   // };
-  const updateProfile = (e) => {
-    e.preventDefault();
-    const data = {
-      name: 'name',
-      username: 'username',
-      email: 'email',
-      gender: 'gender',
-      image: 'image',
-      password: 'password',
-    };
-  };
 
   // const [input, setInput] = useState({
   //   product: null,
@@ -31,7 +18,6 @@ export const Card = (props) => {
   //   description: '',
   //   poster: null,
   // });
-  const toggle = () => setShowModal(!showModal);
 
   // const toggle = (e) => {
   //   sets(e.currentTarget.id);
@@ -43,8 +29,7 @@ export const Card = (props) => {
   //   }
   // console.log(openModal, 'hiyaa');
   return (
-    <div className="card shadow-lg p-0" onClick={toggle}>
-      <ModalProduct showModal={showModal} toggle={toggle} />
+    <div className="card shadow-lg p-0">
       <img src={props.image} className="card-img-top rounded-0" alt="gambar" />
 
       <div className="card-body p-0 text-center">

@@ -8,9 +8,21 @@ import '../components/Clothes/style.css'; // EDIT
 
 const Clothes = () => {
   const navigate = useNavigate();
-
+  const [showModal, setShowModal] = useState(false);
   const [clothes, setClothes] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const handleModalProduct = (data) => {
+    const datas = {
+      ...data,
+      id: Math.random().toString(),
+    };
+
+    // setInput({
+    //   ...input,
+    //   [name]: value,
+    // });
+  };
 
   useEffect(() => {
     console.log('Fetching Data...');
@@ -77,7 +89,11 @@ const Clothes = () => {
     <>
       <Components.Container>
         <div className="text-center mt-5">
-          <button className="btn btn-main fw-semibold text-white py-2 px-4 rounded-0">ADD CLOTH</button>
+          <button className="btn btn-main fw-semibold text-white py-2 px-4 rounded-0" onClick={() => setShowModal(!showModal)}>
+            ADD CLOTH
+          </button>
+
+          <ModalProduct showModal={showModal} toggle={() => setShowModal(!showModal)} dataModalProduct={handleModalProduct} />
         </div>
         <div className="row justify-content-md-evenly gap-lg-5 justify-content-center mt-4">
           {isLoading ? (

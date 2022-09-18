@@ -7,7 +7,7 @@ import { Container, Row, Col, Spinner, Button } from 'reactstrap';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
 
-export const ModalProduct = ({ showModal, toggle }) => {
+export const ModalProduct = (props) => {
   // let modalOpen = props;
 
   // const updateProfile = (e) => {
@@ -21,88 +21,74 @@ export const ModalProduct = ({ showModal, toggle }) => {
   //     password: 'password',
   //   };
   // };
-  const [isLoading, setIsLoading] = useState(false);
   const [input, setInput] = useState({
-    due_date: null,
-    prize: null,
-    title: '',
-    announcement: '',
+    name: '',
+    email: '',
+    address: '',
+    price: '',
+    amount: '',
     description: '',
-    poster: null,
   });
-
   const handleChange = (name, value) => {
-    setInput({
-      ...input,
-      [name]: value,
-    });
-  };
-
-  const handlePoster = (e) => {
-    setInput({
-      ...input,
-      poster: e.target.files[0],
+    // setInput({
+    //   ...input,
+    //   [name]: value,
+    // });
+    setInput((prevState) => {
+      return { ...prevState, [name]: value };
     });
   };
 
   const submit = (e) => {
+    console.log(input);
     e.preventDefault();
-    let formData = new FormData();
-    formData.append('due_date', input.due_date);
-    formData.append('prize', input.prize);
-    formData.append('title', input.title);
-    formData.append('announcement', input.announcement);
-    formData.append('description', input.description);
-    formData.append('poster', input.poster);
+    props.dataModalProduct();
   };
 
   return (
     <div>
-      <Modal isOpen={showModal} toggle={toggle} className="">
+      <Modal isOpen={props.showModal} toggle={props.toggle} className="">
         <ModalBody className="modalBody">
           <Container className="formTemplate" style={{ minHeight: '750px' }}>
             <Row>
               <Col sm="12" md={{ size: 8, offset: 2 }}>
                 <h1>Product</h1>
-                <Form>
+                <form onSubmit={() => submit()}>
                   <div className="inputContainer">
                     <div>
-                      <label for="title">Title</label>
-                      <input type="text" id="title" name="title" placeholder="Product Title" onChange={(e) => handleChange('title', e.target.value)} />
+                      <label for="title">Name </label>
+                      <input type="text" id="name" name="name" placeholder="" onChange={(e) => handleChange('name', e.target.value)} />
                     </div>
                     <div>
-                      <label for="prize">Prize</label>
-                      <input type="number" id="prize" name="prize" placeholder="5000000" onChange={(e) => handleChange('prize', e.target.value)} />
+                      <label for="price">Price</label>
+                      <input type="number" id="price" name="price" placeholder="" onChange={(e) => handleChange('price', e.target.value)} />
                     </div>
                     <div>
-                      {' '}
-                      <label for="date">Due Date</label>
-                      <input type="date" id="date" name="due_date" placeholder="YYYY-MM-DD" onChange={(e) => handleChange('due_date', e.target.value)} />
+                      <label for="email">Email</label>
+                      <input type="text" id="email" name="email" placeholder="" onChange={(e) => handleChange('email', e.target.value)} />
                     </div>
                     <div>
-                      <label for="announcement">Announcement</label>
-                      <input type="date" id="announcement" name="announcement" placeholder="YYYY-MM-DD" onChange={(e) => handleChange('announcement', e.target.value)} />
+                      <label for="A">Amount</label>
+                      <input type="text" id="announcement" name="announcement" placeholder="" onChange={(e) => handleChange('amount', e.target.value)} />
                     </div>
-                    <div className="photo">
-                      <label for="poster">Poster</label>
-                      <input type="file" id="poster" name="poster" placeholder="poster" onChange={handlePoster} />
-                    </div>
+
                     <div className="description">
                       <label for="desc">Description</label>
                       <textarea id="desc" name="desc" onChange={(e) => handleChange('description', e.target.value)} />
                     </div>
                   </div>
                   <Button
+                    type="submit"
                     color="success"
                     className="button createButton mx-auto"
                     onClick={submit}
-                    disabled={isLoading ? 'true' : ''}
-                    style={{ cursor: `${isLoading ? 'not-allowed' : 'pointer'}`, backgroundColor: `${isLoading ? '#A8CC74' : '#8FBD4B'}` }}
+                    // style={{ cursor: `${isLoading ? 'not-allowed' : 'pointer'}`, backgroundColor: `${isLoading ? '#A8CC74' : '#8FBD4B'}` }}
                     title="Create Contest"
                   >
-                    {isLoading ? <Spinner size="sm" color="light" className="spinner" /> : 'Create'}
+                    {/* {isLoading ? <Spinner size="sm" color="light" className="spinner" /> : 'Create'} */}
+                    Klik
                   </Button>
-                </Form>
+                </form>
               </Col>
             </Row>
           </Container>
