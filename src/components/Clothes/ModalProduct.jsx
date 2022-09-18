@@ -7,7 +7,7 @@ import { Container, Row, Col, Spinner, Button } from 'reactstrap';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
 
-export const ModalProduct = ({ showModal, toggle }) => {
+export const ModalProduct = (props) => {
   // let modalOpen = props;
 
   // const updateProfile = (e) => {
@@ -24,48 +24,38 @@ export const ModalProduct = ({ showModal, toggle }) => {
   
   const [isLoading, setIsLoading] = useState(false);
   const [input, setInput] = useState({
-    due_date: null,
-    prize: null,
-    title: '',
-    announcement: '',
+    name: '',
+    email: '',
+    address: '',
+    price: '',
+    amount: '',
     description: '',
-    poster: null,
   });
-
   const handleChange = (name, value) => {
-    setInput({
-      ...input,
-      [name]: value,
-    });
-  };
-
-  const handlePoster = (e) => {
-    setInput({
-      ...input,
-      poster: e.target.files[0],
+    // setInput({
+    //   ...input,
+    //   [name]: value,
+    // });
+    setInput((prevState) => {
+      return { ...prevState, [name]: value };
     });
   };
 
   const submit = (e) => {
+    console.log(input);
     e.preventDefault();
-    let formData = new FormData();
-    formData.append('due_date', input.due_date);
-    formData.append('prize', input.prize);
-    formData.append('title', input.title);
-    formData.append('announcement', input.announcement);
-    formData.append('description', input.description);
-    formData.append('poster', input.poster);
+    props.dataModalProduct();
   };
 
   return (
     <div>
-      <Modal isOpen={showModal} toggle={toggle} className="">
+      <Modal isOpen={props.showModal} toggle={props.toggle} className="">
         <ModalBody className="modalBody">
           <Container className="formTemplate" style={{ minHeight: '750px' }}>
             <Row>
               <Col sm="12" md={{ size: 8, offset: 2 }}>
                 <h1>Product</h1>
-                <Form>
+                <form onSubmit={() => submit()}>
                   <div className="inputContainer">
                     <div>
                       <label htmlFor="title">Title</label>
@@ -88,21 +78,24 @@ export const ModalProduct = ({ showModal, toggle }) => {
                       <label htmlFor="poster">Poster</label>
                       <input type="file" id="poster" name="poster" placeholder="poster" onChange={handlePoster} />
                     </div>
+
                     <div className="description">
                       <label htmlFor="desc">Description</label>
                       <textarea id="desc" name="desc" onChange={(e) => handleChange('description', e.target.value)} />
                     </div>
                   </div>
                   <Button
+                    type="submit"
                     color="success"
                     className="button createButton mx-auto"
                     onClick={submit}
                     style={{ cursor: `${isLoading ? 'not-allowed' : 'pointer'}`, backgroundColor: `${isLoading ? '#A8CC74' : '#8FBD4B'}` }}
                     title="Create Contest"
                   >
-                    {isLoading ? <Spinner size="sm" color="light" className="spinner" /> : 'Create'}
+                    {/* {isLoading ? <Spinner size="sm" color="light" className="spinner" /> : 'Create'} */}
+                    Klik
                   </Button>
-                </Form>
+                </form>
               </Col>
             </Row>
           </Container>
