@@ -8,22 +8,10 @@ import '../components/Clothes/style.css'; // EDIT
 
 const Clothes = () => {
   const navigate = useNavigate();
-  const [showModal, setShowModal] = useState(false);
+
   const [clothes, setClothes] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
-
-  const handleModalProduct = (data) => {
-    const datas = {
-      ...data,
-      id: Math.random().toString(),
-    };
-
-    // setInput({
-    //   ...input,
-    //   [name]: value,
-    // });
-  };
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     console.log('Fetching Data...');
