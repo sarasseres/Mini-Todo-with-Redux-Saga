@@ -5,11 +5,12 @@ import "../components/Home/style.css"; // EDIT
 
 const Home = () => {
   return (
-    <Components.Content>
+    <Components.Content className="home">
       <HomeComponents.HeroSection />
       <HomeComponents.PartnersSection />
       <HomeComponents.PromotionSection />
       <HomeComponents.ProductsSection />
+      <HomeComponents.TestimonialsSection />
     </Components.Content>
   );
 }

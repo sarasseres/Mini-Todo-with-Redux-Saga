@@ -1,4 +1,4 @@
-section {
+.home section {
   margin-top: 6em;
 }
 
@@ -43,7 +43,7 @@ section {
 }
 
 .hero-section {
-  margin-top: 3em;
+  margin-top: 3em !important;
 }
 
 .hero-section .title span {
@@ -67,7 +67,7 @@ section {
 }
 
 .promotion-section {
-  margin-top: 10em;
+  margin-top: 10em !important;
 }
 
 .promotion-section button {
