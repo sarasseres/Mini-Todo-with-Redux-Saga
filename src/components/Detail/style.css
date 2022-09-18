@@ -37,7 +37,7 @@
     border: 3px solid white;
 }
 
-.detail-img-small .img:hover {
+.detail-img-small .img:hover, .detail-img-small .img.active {
     border: 3px solid var(--primaryColor);
     cursor: pointer;
 }

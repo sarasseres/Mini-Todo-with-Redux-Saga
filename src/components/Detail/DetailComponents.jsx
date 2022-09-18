@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 
-
 function slugToTitle(slug) {
   let prevTitle = slug.split("-");
   let afterTitle = [];
@@ -108,7 +107,7 @@ export const DetailProduct = () => {
             </ol>
           </nav>
           <div className="desc p-0">
-            <h3 className="mt-5">{title}</h3>
+            <h3 className="mt-5 fw-bold">{title}</h3>
             <h5 className="mt-3">Rp150.000</h5>
             <select className="form-select my-4" id="inputGroupSelect02">
               <option>Select Size</option>

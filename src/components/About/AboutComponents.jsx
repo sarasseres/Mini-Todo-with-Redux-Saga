@@ -1,5 +1,3 @@
-// export const Content = () => { };
-
 export const History = () => {
     return (
         // <div className="container" >
@@ -37,50 +35,110 @@ export const Team = () => {
                 </div>
             </div>
             <div className="row gap-lg-5 justify-content-center">
-                <div className="col-lg-3 col-sm-8 col-10 p-4 shadow rounded-4 mb-5">
-                    <div className="card">
+                <div className="col-lg-3 col-sm-8 col-10 rounded-4 overflow-hidden p-0 shadow mb-5">
+                    <div className="card p-4 pb-5">
                         <img className="rounded-4" src={require("../../assets/images/about/irham-sm.jpg")} alt="Irham Muhammad Shidiq" />
                         <h5 className="mt-4 fw-semibold">Irham Muhammad Shidiq</h5>
                         <h6 className="mb-3 fw-semibold">Leader</h6>
                         <p className="normal">Asal dari Bogor</p>
                         <small className="small text-secondary">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellat quae ea quam corporis."</small>
                     </div>
+                    <a target="_blank" rel="noreferrer" className="btn btn-primary2 text-white fw-medium rounded-0 w-100 py-25" href="https://www.linkedin.com/in/irham-muhammad-shidiq/">
+                        <i className="fa-brands fa-linkedin-in me-3"></i>
+                        Linkedin
+                    </a>
+                    <a target="_blank" rel="noreferrer" className="btn btn-primary2 text-white fw-medium rounded-0 w-100 py-25" href="https://github.com/irhamshidiq">
+                        <i className="fa-brands fa-github me-3"></i>
+                        Github
+                    </a>
+                    <a target="_blank" rel="noreferrer" className="btn btn-primary2 text-white fw-medium rounded-0 w-100 py-25" href="https://www.instagram.com/irhamshidiq7/">
+                        <i className="fa-brands fa-instagram me-3"></i>
+                        Instagram
+                    </a>
                 </div>
-                <div className="col-lg-3 col-sm-8 col-10 p-4 shadow rounded-4 mb-5">
-                    <div className="card">
+                <div className="col-lg-3 col-sm-8 col-10 rounded-4 overflow-hidden p-0 shadow mb-5">
+                    <div className="card p-4 pb-5">
                         <img className="rounded-4" src={require("../../assets/images/about/fitra-sm.jpg")} alt="Fitra Ari Pradhana" />
                         <h5 className="mt-4 fw-semibold">Fitra Ari Pradhana</h5>
                         <h6 className="mb-3 fw-semibold">Member</h6>
                         <p className="normal">Asal dari Bandung</p>
                         <small className="small text-secondary">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellat quae ea quam corporis."</small>
                     </div>
+                    <a target="_blank" rel="noreferrer" className="btn btn-primary2 text-white fw-medium rounded-0 w-100 py-25" href="/">
+                        <i className="fa-brands fa-linkedin-in me-3"></i>
+                        Linkedin
+                    </a>
+                    <a target="_blank" rel="noreferrer" className="btn btn-primary2 text-white fw-medium rounded-0 w-100 py-25" href="/">
+                        <i className="fa-brands fa-github me-3"></i>
+                        Github
+                    </a>
+                    <a target="_blank" rel="noreferrer" className="btn btn-primary2 text-white fw-medium rounded-0 w-100 py-25" href="https://www.instagram.com/fitraari3/">
+                        <i className="fa-brands fa-instagram me-3"></i>
+                        Instagram
+                    </a>
                 </div>
-                <div className="col-lg-3 col-sm-8 col-10 p-4 shadow rounded-4 mb-5">
-                    <div className="card">
+                <div className="col-lg-3 col-sm-8 col-10 rounded-4 overflow-hidden p-0 shadow mb-5">
+                    <div className="card p-4 pb-5">
                         <img className="rounded-4" src={require("../../assets/images/about/saras-sm.jpg")} alt="Dewi Saraswati" />
                         <h5 className="mt-4 fw-semibold">Dewi Saraswati</h5>
                         <h6 className="mb-3 fw-semibold">Member</h6>
                         <p className="normal">Asal dari Bekasi</p>
                         <small className="small text-secondary">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellat quae ea quam corporis."</small>
                     </div>
+                    <a target="_blank" rel="noreferrer" className="btn btn-primary2 text-white fw-medium rounded-0 w-100 py-25" href="https://www.linkedin.com/in/dewi-saraswati/">
+                        <i className="fa-brands fa-linkedin-in me-3"></i>
+                        Linkedin
+                    </a>
+                    <a target="_blank" rel="noreferrer" className="btn btn-primary2 text-white fw-medium rounded-0 w-100 py-25" href="/">
+                        <i className="fa-brands fa-github me-3"></i>
+                        Github
+                    </a>
+                    <a target="_blank" rel="noreferrer" className="btn btn-primary2 text-white fw-medium rounded-0 w-100 py-25" href="/">
+                        <i className="fa-brands fa-instagram me-3"></i>
+                        Instagram
+                    </a>
                 </div>
-                <div className="col-lg-3 col-sm-8 col-10 p-4 shadow rounded-4 mb-5">
-                    <div className="card">
+                <div className="col-lg-3 col-sm-8 col-10 rounded-4 overflow-hidden p-0 shadow mb-5">
+                    <div className="card p-4 pb-5">
                         <img className="rounded-4" src={require("../../assets/images/about/adedaudhasan-sm.jpg")} alt="Ade Daud Hasan" />
                         <h5 className="mt-4 fw-semibold">Ade Daud Hasan</h5>
                         <h6 className="mb-3 fw-semibold">Member</h6>
                         <p className="normal">Asal dari Majalengka</p>
                         <small className="small text-secondary">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellat quae ea quam corporis."</small>
                     </div>
+                    <a target="_blank" rel="noreferrer" className="btn btn-primary2 text-white fw-medium rounded-0 w-100 py-25" href="/">
+                        <i className="fa-brands fa-linkedin-in me-3"></i>
+                        Linkedin
+                    </a>
+                    <a target="_blank" rel="noreferrer" className="btn btn-primary2 text-white fw-medium rounded-0 w-100 py-25" href="/">
+                        <i className="fa-brands fa-github me-3"></i>
+                        Github
+                    </a>
+                    <a target="_blank" rel="noreferrer" className="btn btn-primary2 text-white fw-medium rounded-0 w-100 py-25" href="https://www.instagram.com/adedaudhasan/">
+                        <i className="fa-brands fa-instagram me-3"></i>
+                        Instagram
+                    </a>
                 </div>
-                <div className="col-lg-3 col-sm-8 col-10 p-4 shadow rounded-4 mb-5">
-                    <div className="card">
+                <div className="col-lg-3 col-sm-8 col-10 rounded-4 overflow-hidden p-0 shadow mb-5">
+                    <div className="card p-4 pb-5">
                         <img className="rounded-4" src={require("../../assets/images/about/adeilham-sm.jpg")} alt="Ade Ilham" />
                         <h5 className="mt-4 fw-semibold">Ade Ilham</h5>
                         <h6 className="mb-3 fw-semibold">Member</h6>
                         <p className="normal">Asal dari Bogor</p>
                         <small className="small text-secondary">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellat quae ea quam corporis."</small>
                     </div>
+                    <a target="_blank" rel="noreferrer" className="btn btn-primary2 text-white fw-medium rounded-0 w-100 py-25" href="https://www.linkedin.com/in/ade-ilham">
+                        <i className="fa-brands fa-linkedin-in me-3"></i>
+                        Linkedin
+                    </a>
+                    <a target="_blank" rel="noreferrer" className="btn btn-primary2 text-white fw-medium rounded-0 w-100 py-25" href="/">
+                        <i className="fa-brands fa-github me-3"></i>
+                        Github
+                    </a>
+                    <a target="_blank" rel="noreferrer" className="btn btn-primary2 text-white fw-medium rounded-0 w-100 py-25" href="/">
+                        <i className="fa-brands fa-instagram me-3"></i>
+                        Instagram
+                    </a>
                 </div>
             </div>
         </div>
