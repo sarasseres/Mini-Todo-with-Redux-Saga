@@ -7,7 +7,7 @@ export const Card = (props) => {
     <div className="card shadow-lg p-0">
       <img src={props.image} className="card-img-top rounded-0" alt="gambar" />
       <div className="card-body p-0 text-center">
-        <h4 className="card-title fw-semibold px-3 mt-4">{props.title}</h4>
+        <h4 className="card-title fw-bold px-3 mt-4">{props.title}</h4>
         <p className="card-desc normal fw-medium text-secondary px-3 mt-3 mb-4">{props.desc}</p>
         <div className="hr mb-4" />
         <h3 className="fw-bold mb-4">{props.price}</h3>

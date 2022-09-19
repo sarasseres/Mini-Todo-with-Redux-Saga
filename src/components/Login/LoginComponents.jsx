@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 
 const Input = (props) => {
   return (
@@ -44,13 +45,13 @@ function CheckLogin(datas) {
 }
 
 export const Login = () => {
-  const [formData, setFormData] = useState({
-    username: "",
-    password: "",
-    confirmPassword: "",
-  });
+  const [formData, setFormData] = useState({});
   const [isSame, setIsSame] = useState(false);
   const [seePassword, setSeePassword] = useState(false);
+
+  function formChange(title, value) {
+    setFormData(prev => ({...prev, [title]: value}));
+  }
 
   useEffect(() => {
     let password = document.getElementById("password");
@@ -83,7 +84,7 @@ export const Login = () => {
               <label htmlFor="username" className="form-label fw-medium normal mb-2">Username</label>
               <input type="text" name="username" id="username" className="form-control shadow-none px-3 py-2 fw-medium" placeholder="eg. user" value={formData.username} required onChange={el => {
                 el.preventDefault();
-                setFormData(prev => ({...prev, username: el.target.value}));
+                formChange("username", el.target.value);
               }} />
             </div>
 
@@ -91,7 +92,7 @@ export const Login = () => {
               <label htmlFor="password" className="form-label fw-medium normal mb-2">Password</label>
             <Input type="password" idname="password" placeholder={"eg. *****"} value={formData.password} onChange={
                 val => {
-                  setFormData(prev => ({...prev, password: val}));
+                  formChange("password", val);
                   setIsSame(formData.confirmPassword === val);
                 }
               } />
@@ -100,7 +101,7 @@ export const Login = () => {
             <div className="my-4">
               <label htmlFor="confirmPassword" className="form-label fw-medium normal mb-2">Confirm Password</label>
               <Input type="password" className={!isSame ? "border-danger" : ""} idname="confirmPassword" placeholder={"eg. *****"} onChange={val => {
-                  setFormData(prev => ({...prev, confirmPassword: val}));
+                  formChange("confirmPassword", val);
                   setIsSame(formData.password === val);
                 }
               } />
@@ -116,6 +117,9 @@ export const Login = () => {
             </div>
 
             <button type="submit" className="button-login fw-semibold py-25 rounded-3">Login</button>
+            <div className="text-center mt-4">
+              <Link to="/" className="fw-medium normal text-primary2">Back to Home</Link>
+            </div>
           </form>
 
         </div>

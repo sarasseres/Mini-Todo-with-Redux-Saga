@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import * as Components from '../components/Components';
-import ModalProduct from '../components/Clothes/ModalProduct';
 import * as ClothesComponents from '../components/Clothes/ClothesComponents'; // EDIT
 
+import DataClothes from '../Data';
+import ModalProduct from '../components/Clothes/ModalProduct';
 import '../components/Clothes/style.css'; // EDIT
 
 const Clothes = () => {
@@ -21,56 +22,7 @@ const Clothes = () => {
       console.log('Fetch Data Success!');
       setIsLoading(false);
 
-      setClothes(() => [
-        {
-          id: 1,
-          image: 'ribbed-blouse-outfit.jpg',
-          title: 'Ribbed Blouse Outfit',
-          slug: 'ribbed-blouse-outfit',
-          desc: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-          price: '400.000,00',
-        },
-        {
-          id: 2,
-          image: 'relaxed-fit-sweatshirt.jpg',
-          title: 'Relaxed Fit Sweatshirt',
-          slug: 'relaxed-fit-sweatshirt',
-          desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam at delectus officiis provident sequi quas molestias velit iusto. Quisquam quam animi distinctio. Pariatur quisquam deleniti veritatis ipsa reiciendis soluta nulla.',
-          price: '340.000,00',
-        },
-        {
-          id: 3,
-          image: 'regular-fit-overshirt.jpg',
-          title: 'Regular Fit Overshirt',
-          slug: 'regular-fit-overshirt',
-          desc: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-          price: '280.000,00',
-        },
-        {
-          id: 4,
-          image: 'shirt-white-a-sheen.jpg',
-          title: 'Shirt White A Sheen',
-          slug: 'shirt-white-a-sheen',
-          desc: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-          price: '450.000,00',
-        },
-        {
-          id: 5,
-          image: 'flared-shirt.jpg',
-          title: 'Flared Shirt',
-          slug: 'flared-shirt',
-          desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam at delectus officiis provident sequi quas molestias velit iusto. Quisquam quam animi distinctio. Pariatur quisquam deleniti veritatis ipsa reiciendis soluta nulla.',
-          price: '519.999,00',
-        },
-        {
-          id: 6,
-          image: 'polkadot-shirt.jpg',
-          title: 'Polkadot Shirt',
-          slug: 'polkadot-shirt',
-          desc: "Some quick example text to build on the card title and make up the bulk of the card's content.",
-          price: '379.999,00',
-        },
-      ]);
+      setClothes(() => DataClothes);
     }, 2000);
   }, []);
 
