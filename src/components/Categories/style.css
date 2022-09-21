@@ -1,0 +1,26 @@
+.banner {
+  background-image: url("./../../assets/images/categories/banner.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  letter-spacing: 3px;
+}
+
+.banner > * {
+  position: relative;
+  z-index: 2;
+}
+
+.banner .filter {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(37, 35, 54, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1;
+}
+
+.banner h1 {
+  font-size: 110px;
+}

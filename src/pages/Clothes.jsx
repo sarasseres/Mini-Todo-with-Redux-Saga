@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 import * as Components from '../components/Components';
 import * as ClothesComponents from '../components/Clothes/ClothesComponents'; // EDIT
-
-import DataClothes from '../Data';
 import ModalProduct from '../components/Clothes/ModalProduct';
 import '../components/Clothes/style.css'; // EDIT
 
 const Clothes = () => {
   const navigate = useNavigate();
+  const dataClothes = useSelector(state => state).clothes;
 
   const [clothes, setClothes] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -22,7 +23,7 @@ const Clothes = () => {
       console.log('Fetch Data Success!');
       setIsLoading(false);
 
-      setClothes(() => DataClothes);
+      setClothes(() => dataClothes);
     }, 2000);
   }, []);
 
@@ -35,7 +36,7 @@ const Clothes = () => {
         </div>
         <div className="row justify-content-md-evenly gap-lg-5 justify-content-center mt-4">
           {isLoading ? (
-            <h3 className="text-center text-success mt-5">Sedang Memuat...</h3>
+            <h3 className="text-center text-primary2 mt-5">Sedang Memuat...</h3>
           ) : (
             clothes.map((cloth) => (
               <div className="col-lg-3 col-md-5 col-10 my-md-5 my-4" key={cloth.id}>

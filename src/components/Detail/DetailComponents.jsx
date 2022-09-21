@@ -24,7 +24,7 @@ export const DetailProduct = () => {
     <div className="detail mt-5">
       <div className="row m-0 justify-content-between align-items-center">
         <div className="col-lg-5 p-0">
-          <div className="detail-img">
+          <div className="detail-img mb-lg-0 mb-5">
             <div className="detail-img-header">
               <img
                 src={require(`../../assets/images/products/${title === "Khaki Cord Shirt" ? img.src : params.slug}.jpg`)}
@@ -108,7 +108,7 @@ export const DetailProduct = () => {
           </nav>
           <div className="desc p-0">
             <h3 className="mt-5 fw-bold">{title}</h3>
-            <h5 className="mt-3">Rp150.000</h5>
+            <h4 className="mt-3">Rp150.000</h4>
             <select className="form-select my-4" id="inputGroupSelect02">
               <option>Select Size</option>
               <option value="s">S</option>

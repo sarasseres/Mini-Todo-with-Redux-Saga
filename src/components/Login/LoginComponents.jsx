@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { setIsLogin } from "../../bootstrap/action";
 
 const Input = (props) => {
   return (
@@ -30,24 +32,49 @@ const Input = (props) => {
 //   localStorage.setItem("user", JSON.stringify(datas));
 // }
 
-function CheckLogin(datas) {
-  // const username = localStorage.getItem("username");
-  // const password = localStorage.getItem("password");
+// const CheckLogin = (datas) => {
+//   const username = localStorage.getItem("username");
+//   const password = localStorage.getItem("password");
 
-  if ("user" === datas.username && "user123" === datas.password) {
-    alert("Success Login!");
-    localStorage.setItem("login", true);
-    document.location.href = "/";
-  } else {
-    alert("Failed Login!");
-    document.location.href = "/login";
-  }
-}
+//   if ("user" === datas.username && "user123" === datas.password) {
+//     alert("Success Login!");
+//     localStorage.setItem("login", true);
+//     document.location.href = "/";
+//   } else {
+//     alert("Failed Login!");
+//     document.location.href = "/login";
+//   }
+// }
 
 export const Login = () => {
   const [formData, setFormData] = useState({});
   const [isSame, setIsSame] = useState(false);
   const [seePassword, setSeePassword] = useState(false);
+  const [error, setError] = useState(false);
+
+  const users = useSelector(state => state).users;
+  const dispatch = useDispatch();
+
+  function checkLogin(datas) {
+    users.forEach(user => {
+      if (datas.username === user.username) {
+        if (datas.password === user.password) {
+          alert("Success Login!");
+          dispatch(
+            setIsLogin({
+              isLogin: true,
+            })
+          );
+
+          localStorage.setItem("username", (user.username[0].toUpperCase() + user.username.slice(1)));
+          localStorage.setItem("login", true);
+          window.location.replace("/");
+        }
+      }
+
+      setError(true);
+    });
+  }
 
   function formChange(title, value) {
     setFormData(prev => ({...prev, [title]: value}));
@@ -68,8 +95,19 @@ export const Login = () => {
 
   return (
     <section className="login">
+      {error ? (
+        <div className="alert fixed-top alert-danger alert-dismissible fade show ps-md-5 m-0" role="alert">
+          <p className="fw-bold text-danger m-0">Username atau Password Salah!</p>
+          <button type="button" className="btn-close shadow-none me-md-5" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      ) : ("")}
       <div className="row justify-content-between align-items-center h-100">
         <div className="col-lg-5 login-left order-lg-1 order-2">
+          <div className="alert alert-success alert-dismissible fade show mb-4" role="alert">
+            <p className="normal text-success fw-semibold mb-3">Username : user</p>
+            <p className="normal text-success fw-semibold m-0">Password : user123</p>
+            <button type="button" className="btn-close shadow-none mt-3" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
           <div className="header mb-5">
             <h1>Welcome to B<span className="text-primary2">HEV</span>IN</h1>
             <p className="normal mt-3">Welcome back, please fill in data to continue</p>
@@ -78,11 +116,11 @@ export const Login = () => {
           <form className="login-form" id="loginForm" onSubmit={e => {
             e.preventDefault();
             console.log(formData);
-            isSame ? CheckLogin(formData) : alert("Password Tidak Sama!");
+            isSame ? checkLogin(formData) : alert("Password Tidak Sama!");
           }}>
             <div className="my-4">
               <label htmlFor="username" className="form-label fw-medium normal mb-2">Username</label>
-              <input type="text" name="username" id="username" className="form-control shadow-none px-3 py-2 fw-medium" placeholder="eg. user" value={formData.username} required onChange={el => {
+              <input type="text" name="username" id="username" className="form-control shadow-none px-3 py-2 fw-medium" placeholder="eg. user" value={formData.username || ''} required onChange={el => {
                 el.preventDefault();
                 formChange("username", el.target.value);
               }} />
@@ -90,7 +128,7 @@ export const Login = () => {
 
             <div className="my-4">
               <label htmlFor="password" className="form-label fw-medium normal mb-2">Password</label>
-            <Input type="password" idname="password" placeholder={"eg. *****"} value={formData.password} onChange={
+            <Input type="password" idname="password" placeholder={"eg. *****"} value={formData.password || ''} onChange={
                 val => {
                   formChange("password", val);
                   setIsSame(formData.confirmPassword === val);
@@ -108,12 +146,12 @@ export const Login = () => {
             </div>
 
             <div className="d-flex align-items-center mt-4 mb-5">
-              <div className="position-relative see-password">
+              <div className="position-relative see-password cursor-pointer">
                 <input type="checkbox" id="seePassword" name="seePassword" className="form-check-input" onClick={()=>setSeePassword(!seePassword)} />
                 <h5 className={`m-0 mt-1 ${seePassword ? "d-none" : "d-block"}`} id="hide"><i className="fa-solid fa-eye-slash"></i></h5>
                 <h5 className={`m-0 mt-1 ${seePassword ? "d-block" : "d-none"}`} id="show"><i className="fa-solid fa-eye"></i></h5>
               </div>
-              <label htmlFor="seePassword" className="form-label fw-semibold normal ms-3 mt-2 user-select-none">See Password</label>
+              <label htmlFor="seePassword" className="form-label cursor-pointer fw-semibold normal ms-3 mt-2 user-select-none">See Password</label>
             </div>
 
             <button type="submit" className="button-login fw-semibold py-25 rounded-3">Login</button>

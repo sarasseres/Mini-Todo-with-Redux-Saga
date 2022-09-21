@@ -1,7 +1,9 @@
+import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./style.css";
 
 const Logout = () => {
+  localStorage.removeItem("username");
   localStorage.setItem("login", false);
   window.location.replace("/login");
 }
@@ -10,6 +12,9 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const auth = localStorage.getItem("login") === "true";
+  const user = useSelector(state => state).users.filter(user => user.isLogin === true);
+
+  console.log(user);
 
   const navs = [
     {
