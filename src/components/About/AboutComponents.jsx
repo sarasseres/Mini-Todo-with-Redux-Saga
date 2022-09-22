@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import Data from "./Data";
 
 const Member = (props) => {
    return (
@@ -54,8 +54,6 @@ export const History = () => {
 };
 
 export const Team = () => {
-    const members = useSelector(state => state).members;
-
     return (
         <div className="container mt-5 team">
             <div className="row">
@@ -64,7 +62,7 @@ export const Team = () => {
                 </div>
             </div>
             <div className="row gap-lg-5 justify-content-center">
-               { members.map((member, id) => 
+               { Data.map((member, id) => 
                   <Member image={member.image} name={member.name} position={member.position} address={member.address} desc={member.desc} linkedin={member.linkedin} github={member.github} instagram={member.instagram} key={id} />
                ) }
             </div>

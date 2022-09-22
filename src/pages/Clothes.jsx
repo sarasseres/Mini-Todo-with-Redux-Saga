@@ -9,7 +9,7 @@ import '../components/Clothes/style.css'; // EDIT
 
 const Clothes = () => {
   const navigate = useNavigate();
-  const dataClothes = useSelector(state => state).clothes;
+  const data = useSelector(state => state).clothes;
 
   const [clothes, setClothes] = useState([]);
   const [showModal, setShowModal] = useState(false);
@@ -23,7 +23,7 @@ const Clothes = () => {
       console.log('Fetch Data Success!');
       setIsLoading(false);
 
-      setClothes(() => dataClothes);
+      setClothes(data);
     }, 2000);
   }, []);
 

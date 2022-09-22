@@ -3,18 +3,15 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "./style.css";
 
 const Logout = () => {
-  localStorage.removeItem("username");
-  localStorage.setItem("login", false);
+  localStorage.removeItem("access_token");
   window.location.replace("/login");
 }
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const auth = localStorage.getItem("login") === "true";
-  const user = useSelector(state => state).users.filter(user => user.isLogin === true);
-
-  console.log(user);
+  const auth = localStorage.getItem("access_token");
+  const user = useSelector(state => state).users.filter(user => user.access_token === auth)[0];
 
   const navs = [
     {
@@ -26,9 +23,13 @@ const Navbar = () => {
       path: "/clothes"
     },
     {
-      title: "Cloth",
-      path: "/clothes/cloth"
+      title: "Categories",
+      path: "/categories"
     },
+    // {
+    //   title: "Cloth",
+    //   path: "/clothes/cloth"
+    // },
     {
       title: "About",
       path: "/about"
@@ -77,7 +78,7 @@ const Navbar = () => {
             {auth ? (
               <div className="d-flex align-items-center cursor-pointer ms-5" onClick={()=>Logout()}>
                 <img src={require('../assets/icons/user.png')} alt="cart" width="19"/>
-                <p className="m-0 ms-3 fw-semibold m-0">{localStorage.getItem("username") || "User"}</p>
+                <p className="m-0 ms-3 fw-semibold m-0">{user.username[0].toUpperCase() + user.username.slice(1)}</p>
               </div>
             ) : (
               <div className="ms-5">

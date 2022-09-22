@@ -22,7 +22,7 @@ function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        {localStorage.getItem("login") === "true" ? (
+        {localStorage.getItem("access_token") ? (
           <Routes>
             <Route path="/" element={<Layout />}>
               {/* Static Route */}

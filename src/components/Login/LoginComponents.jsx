@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-import { setIsLogin } from "../../bootstrap/action";
+// import { setIsLogin } from "../../bootstrap/action";
 
 const Input = (props) => {
   return (
@@ -21,31 +21,6 @@ const Input = (props) => {
   )
 }
 
-// function StoreLogin(datas) {
-//   for (let data in datas) {
-//     if (data !== "confirmPassword") {
-//       localStorage.setItem(data, datas[data]);
-//     }
-//   }
-
-//   delete datas.confirmPassword;
-//   localStorage.setItem("user", JSON.stringify(datas));
-// }
-
-// const CheckLogin = (datas) => {
-//   const username = localStorage.getItem("username");
-//   const password = localStorage.getItem("password");
-
-//   if ("user" === datas.username && "user123" === datas.password) {
-//     alert("Success Login!");
-//     localStorage.setItem("login", true);
-//     document.location.href = "/";
-//   } else {
-//     alert("Failed Login!");
-//     document.location.href = "/login";
-//   }
-// }
-
 export const Login = () => {
   const [formData, setFormData] = useState({});
   const [isSame, setIsSame] = useState(false);
@@ -53,27 +28,22 @@ export const Login = () => {
   const [error, setError] = useState(false);
 
   const users = useSelector(state => state).users;
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   function checkLogin(datas) {
     users.forEach(user => {
       if (datas.username === user.username) {
-        if (datas.password === user.password) {
+        if(datas.password === user.password) {
           alert("Success Login!");
-          dispatch(
-            setIsLogin({
-              isLogin: true,
-            })
-          );
-
-          localStorage.setItem("username", (user.username[0].toUpperCase() + user.username.slice(1)));
-          localStorage.setItem("login", true);
+          localStorage.setItem("access_token", user.access_token);
           window.location.replace("/");
+        } else {
+          setError(true)
         }
+      } else {
+        setError(true);
       }
-
-      setError(true);
-    });
+    })
   }
 
   function formChange(title, value) {
