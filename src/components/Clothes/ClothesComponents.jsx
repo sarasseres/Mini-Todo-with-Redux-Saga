@@ -22,7 +22,7 @@ export const Card = (props) => {
 
   return (
     <div>
-      <ModalProduct isOpen={showModal} toggle={!showModal} />
+      <ModalProduct showModal={showModal} toggle={()=>setShowModal(!showModal)} id={props.id} />
       <div className="d-flex justify-content-center">
         <button className="btn btn-info text-white small shadow-lg rounded-0" onClick={()=>setShowModal(!showModal)}><i className="fa-solid fa-pen"></i></button>
         <button className="btn btn-danger text-white small shadow-lg rounded-0" onClick={()=>window.confirm("Are sure want delete?")?Delete(props.id):""}><i className="fa-solid fa-trash"></i></button>

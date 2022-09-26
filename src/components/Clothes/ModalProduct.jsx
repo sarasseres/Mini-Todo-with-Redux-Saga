@@ -7,7 +7,14 @@ import './style.css';
 
 export const ModalProduct = (props) => {
   const [input, setInput] = useState({});
+  const [cloth, setCloth] = useState({});
   const access_token = useSelector(state => state).access_token;
+
+  useEffect(() => {
+    axios
+      .get("https://kawahedukasibackend.herokuapp.com/content/data/mukti")
+      .then(({ data }) => setCloth(data.filter(e => e.id === props.id)[0]));
+  }, [props.showModal]);
 
   const handleChange = (name, value) => {
     setInput((prevState) => {
@@ -15,7 +22,7 @@ export const ModalProduct = (props) => {
     });
   };
 
-  const submit = (e) => {
+  const create = (e) => {
     input.description1 = input.name.toLowerCase().split(" ").join("-");
 
     axios({
@@ -25,12 +32,12 @@ export const ModalProduct = (props) => {
       headers: { access_token }
     }).then(res => console.log(res)).catch(err => console.log(err));
 
-    axios
-      .get("https://kawahedukasibackend.herokuapp.com/content/data/mukti")
-      .then((res) => console.log(res))
-      .catch((err) => console.log(err));
     e.preventDefault();
   };
+
+  const update = (e) => {
+    e.preventDefault();
+  }
 
   return (
     <Modal isOpen={props.showModal} toggle={props.toggle} ref={null}>
@@ -39,7 +46,7 @@ export const ModalProduct = (props) => {
       </ModalHeader>
       <ModalBody className="modalBody">
         <Container className="formTemplate py-4">
-          <form method="post" encType="multipart/form-data" onSubmit={() => submit()}>
+          <form method="post" encType="multipart/form-data" onSubmit={() => create()}>
             <div className="inputContainer">
               <div className="photo">
                 <label className="form-label normal" htmlFor="image">
@@ -130,7 +137,6 @@ export const ModalProduct = (props) => {
               type="submit"
               color="success"
               className="createButton py-2 mt-3 fw-semibold w-100"
-              onClick={submit}
               // style={{ cursor: `${isLoading ? 'not-allowed' : 'pointer'}`, backgroundColor: `${isLoading ? '#A8CC74' : '#8FBD4B'}` }}
               title="Create Contest"
             >
