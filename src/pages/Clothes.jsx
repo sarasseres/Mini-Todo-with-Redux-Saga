@@ -6,6 +6,7 @@ import * as Components from '../components/Components';
 import * as ClothesComponents from '../components/Clothes/ClothesComponents'; // EDIT
 import ModalProduct from '../components/Clothes/ModalProduct';
 import '../components/Clothes/style.css'; // EDIT
+import axios from 'axios';
 
 const Clothes = () => {
   const navigate = useNavigate();
@@ -24,8 +25,9 @@ const Clothes = () => {
       setIsLoading(false);
 
       setClothes(data);
+      axios.get("https://kawahedukasibackend.herokuapp.com/content/data/mukti").then(res => console.log(res)).catch(err => console.log(err));
     }, 2000);
-  }, []);
+  }, [data]);
 
   return (
     <>
@@ -40,7 +42,7 @@ const Clothes = () => {
           ) : (
             clothes.map((cloth) => (
               <div className="col-lg-3 col-md-5 col-10 my-md-5 my-4" key={cloth.id}>
-                <ClothesComponents.Card image={require(`./../assets/images/products/${cloth.image}`)} title={cloth.title} desc={cloth.desc} price={cloth.price} onClick={() => navigate(`/clothes/${cloth.slug}`)} />
+                <ClothesComponents.Card id={155} image={require(`./../assets/images/products/${cloth.image}`)} title={cloth.title} desc={cloth.desc} price={cloth.price} onClick={() => navigate(`/clothes/${cloth.slug}`)} />
               </div>
             ))
           )}
