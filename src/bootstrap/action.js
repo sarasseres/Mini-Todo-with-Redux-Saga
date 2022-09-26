@@ -1,8 +1,8 @@
-const setIsLogin = (payload) => {
+const setAuth = (payload) => {
   return {
-    type: "SET_ISLOGIN",
-    payload: payload
+    type: "SET_AUTH",
+    payload
   }
 }
 
-export { setIsLogin }
+export { setAuth };

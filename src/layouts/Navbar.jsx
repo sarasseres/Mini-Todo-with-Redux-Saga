@@ -1,17 +1,14 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
+import { setAuth } from "./../bootstrap/action";
 import "./style.css";
-
-const Logout = () => {
-  localStorage.removeItem("access_token");
-  window.location.replace("/login");
-}
 
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const auth = localStorage.getItem("access_token");
-  const user = useSelector(state => state).users.filter(user => user.access_token === auth)[0];
+  const dispatch = useDispatch();
+  const auth = useSelector(state => state).access_token;
+  // const user = useSelector(state => state).users.filter(user => user.access_token === auth)[0];
 
   const navs = [
     {
@@ -76,9 +73,9 @@ const Navbar = () => {
               <div className="fill"></div>
             </div>
             {auth ? (
-              <div className="d-flex align-items-center cursor-pointer ms-5" onClick={()=>Logout()}>
+              <div className="d-flex align-items-center cursor-pointer ms-5" onClick={()=>dispatch(setAuth({ access_token: undefined }))}>
                 <img src={require('../assets/icons/user.png')} alt="cart" width="19"/>
-                <p className="m-0 ms-3 fw-semibold m-0">{user.username[0].toUpperCase() + user.username.slice(1)}</p>
+                <p className="m-0 ms-3 fw-semibold m-0">Bhevin_4</p>
               </div>
             ) : (
               <div className="ms-5">
@@ -87,7 +84,7 @@ const Navbar = () => {
             )}
           </div>
           {auth ? (
-            <button className="btn btn-login w-100 d-block d-lg-none mt-3" onClick={()=>Logout()}>
+            <button className="btn btn-login w-100 d-block d-lg-none mt-3" onClick={()=>dispatch(setAuth({ access_token: undefined }))}>
               <i className="fa-solid fa-user me-2"></i>
               Logout
             </button>

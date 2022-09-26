@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-// import { setIsLogin } from "../../bootstrap/action";
+import { setAuth } from "./../../bootstrap/action";
+import axios from "axios";
 
 const Input = (props) => {
   return (
@@ -27,22 +28,20 @@ export const Login = () => {
   const [seePassword, setSeePassword] = useState(false);
   const [error, setError] = useState(false);
 
-  const users = useSelector(state => state).users;
-  // const dispatch = useDispatch();
+  // const users = useSelector(state => state).users;
+  const dispatch = useDispatch();
 
   function checkLogin(datas) {
-    users.forEach(user => {
-      if (datas.username === user.username) {
-        if(datas.password === user.password) {
-          alert("Success Login!");
-          localStorage.setItem("access_token", user.access_token);
-          window.location.replace("/");
-        } else {
-          setError(true)
-        }
-      } else {
-        setError(true);
-      }
+    axios({
+      method: "post",
+      url: "https://kawahedukasibackend.herokuapp.com/login",
+      data: datas
+    }).then(({ data }) => {
+      alert("Success Login!")
+      dispatch(setAuth({ access_token: data?.access_token }))
+    }).catch(err => {
+      setError(true)
+      console.log(err.message);
     })
   }
 
@@ -85,7 +84,6 @@ export const Login = () => {
 
           <form className="login-form" id="loginForm" onSubmit={e => {
             e.preventDefault();
-            console.log(formData);
             isSame ? checkLogin(formData) : alert("Password Tidak Sama!");
           }}>
             <div className="my-4">

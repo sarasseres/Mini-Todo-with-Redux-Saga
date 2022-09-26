@@ -1,4 +1,5 @@
 const data = {
+  access_token: undefined,
   clothes: [
     {
       id: 1,

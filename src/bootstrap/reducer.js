@@ -1,15 +1,15 @@
-import initialState from "./initialState"
+import inisialState from "./initialState";
 
-function reducer(state = initialState, action) {
+function reducer (state = inisialState, action) {
   switch (action.type) {
-    case "SET_ISLOGIN":
+    case "SET_AUTH":
       return {
-        ...state.users,
-        isLogin: action.payload.isLogin
+        ...state,
+        access_token: action.payload.access_token,
       }
-
+    
     default:
-      return state
+      return state;
   }
 }
 
