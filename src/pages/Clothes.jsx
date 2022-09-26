@@ -27,7 +27,7 @@ const Clothes = () => {
       setClothes(data);
       axios.get("https://kawahedukasibackend.herokuapp.com/content/data/mukti").then(res => console.log(res)).catch(err => console.log(err));
     }, 2000);
-  }, []);
+  }, [data]);
 
   return (
     <>
@@ -42,7 +42,7 @@ const Clothes = () => {
           ) : (
             clothes.map((cloth) => (
               <div className="col-lg-3 col-md-5 col-10 my-md-5 my-4" key={cloth.id}>
-                <ClothesComponents.Card id={cloth.id} image={require(`./../assets/images/products/${cloth.image}`)} title={cloth.title} desc={cloth.desc} price={cloth.price} onClick={() => navigate(`/clothes/${cloth.slug}`)} />
+                <ClothesComponents.Card id={155} image={require(`./../assets/images/products/${cloth.image}`)} title={cloth.title} desc={cloth.desc} price={cloth.price} onClick={() => navigate(`/clothes/${cloth.slug}`)} />
               </div>
             ))
           )}

@@ -1,7 +1,7 @@
-import * as Components from "../components/Components";
-import * as HomeComponents from "../components/Home/HomeComponents"; // EDIT
+import * as Components from "./../components/Components";
+import * as HomeComponents from "./../components/Home/HomeComponents"; // EDIT
 
-import "../components/Home/style.css"; // EDIT
+import "./../components/Home/style.css"; // EDIT
 
 const Home = () => {
   return (
