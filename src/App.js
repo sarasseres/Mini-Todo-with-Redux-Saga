@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
@@ -9,7 +9,7 @@ import Layout from './layouts/Layout';
 import * as Pages from './pages';
 
 function App() {
-  const auth = useSelector(state => state).access_token === undefined;
+  const auth = useSelector((state) => state).access_token === undefined;
 
   return (
     <BrowserRouter>
