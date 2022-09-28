@@ -110,7 +110,7 @@ export const ModalProduct = (props) => {
         <Container className="formTemplate py-4">
           <form method="post" encType="multipart/form-data" onSubmit={() => props.id ? update() : create()}>
             <div className="inputContainer detail-img-small">
-              <div className="img" style={{backgroundImage: `url(${showImage})`}}></div>
+              {props.id && <div className="img" style={{backgroundImage: `url(${showImage})`}} />}
               <div className="photo">
                 <label className="form-label normal" htmlFor="image">
                   Image

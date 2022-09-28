@@ -28,7 +28,7 @@ export const DetailProduct = () => {
     .then(({ data }) => {
       setCloth(data.filter(e => e.description1 === params.slug)[0])
     })
-  });
+  })
 
   useEffect(() => {
     if (cloth?.image) {
@@ -42,7 +42,6 @@ export const DetailProduct = () => {
       require(`./../../assets/images/products/${cloth?.image.slice(0, cloth?.image.length - 4) + `-${order}.jpg`}`);
       return `${cloth?.image.slice(0, cloth?.image.length - 4) + `-${order}.jpg`}`;
     } catch (e) {
-      require(`./../../assets/images/products/${img}`);
       return img;
     }
   }
