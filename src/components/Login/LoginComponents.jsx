@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setAuth } from "./../../bootstrap/action";
 import axios from "axios";
 
@@ -67,16 +67,11 @@ export const Login = () => {
       {error ? (
         <div className="alert fixed-top alert-danger alert-dismissible fade show ps-md-5 m-0" role="alert">
           <p className="fw-bold text-danger m-0">Username atau Password Salah!</p>
-          <button type="button" className="btn-close shadow-none me-md-5" data-bs-dismiss="alert" aria-label="Close"></button>
+          <button type="button" className="btn-close shadow-none me-md-5" data-bs-dismiss="alert" onClick={()=>setError(false)} aria-label="Close"></button>
         </div>
       ) : ("")}
       <div className="row justify-content-between align-items-center h-100">
         <div className="col-lg-5 login-left order-lg-1 order-2">
-          <div className="alert alert-success alert-dismissible fade show mb-4" role="alert">
-            <p className="normal text-success fw-semibold mb-3">Username : user</p>
-            <p className="normal text-success fw-semibold m-0">Password : user123</p>
-            <button type="button" className="btn-close shadow-none mt-3" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
           <div className="header mb-5">
             <h1>Welcome to B<span className="text-primary2">HEV</span>IN</h1>
             <p className="normal mt-3">Welcome back, please fill in data to continue</p>
