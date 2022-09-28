@@ -24,6 +24,7 @@ function App() {
           <Route path="clothes/:slug" element={auth ? <Navigate to="/login" /> : <Pages.Detail />} />
         </Route>
         <Route path="/login" element={auth ? <Pages.Login /> : <Navigate to="/" />} />
+        <Route path="/form" element={auth ? <Pages.Form /> : <Navigate to="/form" />} />
       </Routes>
     </BrowserRouter>
   );
