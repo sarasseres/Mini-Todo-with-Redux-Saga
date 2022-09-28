@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 import * as Components from '../components/Components';
 import * as ClothesComponents from '../components/Clothes/ClothesComponents'; // EDIT
@@ -10,29 +9,26 @@ import axios from 'axios';
 
 const Clothes = () => {
   const navigate = useNavigate();
-  const data = useSelector((state) => state).clothes;
+  // const data = useSelector(state => state).clothes;
 
   const [clothes, setClothes] = useState([]);
 
   const [showModal, setShowModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const api = axios.create({
+    baseURL: 'https://kawahedukasibackend.herokuapp.com/',
+    timeout: 50000,
+  });
 
   useEffect(() => {
-    console.log('Fetching Data...');
     setIsLoading(true);
 
-    setTimeout(() => {
-      console.log('Fetch Data Success!');
+    api.get('content/data/bhevin_4').then(({ data }) => {
       setIsLoading(false);
-
       setClothes(data);
-      axios
-        .get('https://kawahedukasibackend.herokuapp.com/content/data/mukti')
-        .then((res) => console.log(res))
-        .catch((err) => console.log(err));
-    }, 2000);
-  }, [data]);
-  console.log(setClothes, 'heyyyyyyy');
+    });
+  }, []);
+
   return (
     <>
       <Components.Container>
@@ -44,11 +40,20 @@ const Clothes = () => {
         </div>
         <div className="row justify-content-md-evenly gap-lg-5 justify-content-center mt-4">
           {isLoading ? (
-            <h3 className="text-center text-primary2 mt-5">Sedang Memuat...</h3>
+            <h3 className="text-center text-primary2 fw-bold mt-6 mb-5">Fetching Data...</h3>
+          ) : !clothes.length ? (
+            <h3 className="text-center text-danger fw-bold mt-6 mb-5">No Cloth Available</h3>
           ) : (
             clothes.map((cloth) => (
               <div className="col-lg-3 col-md-5 col-10 my-md-5 my-4" key={cloth.id}>
-                <ClothesComponents.Card id={155} image={require(`./../assets/images/products/${cloth.image}`)} title={cloth.title} desc={cloth.desc} price={cloth.price} onClick={() => navigate(`/clothes/${cloth.slug}`)} />
+                <ClothesComponents.Card
+                  id={cloth.id}
+                  image={require(`./../assets/images/products/${cloth.image}`)}
+                  title={cloth.name}
+                  desc={cloth.description2}
+                  price={cloth.description6}
+                  onClick={() => navigate(`/clothes/${cloth.description1}`)}
+                />
               </div>
             ))
           )}

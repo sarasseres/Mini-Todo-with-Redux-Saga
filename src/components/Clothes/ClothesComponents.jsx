@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import ModalProduct from "./ModalProduct";
 
 export const Header = (props) => {
@@ -8,6 +9,7 @@ export const Header = (props) => {
 };
 
 export const Card = (props) => {
+  const navigate = useNavigate();
   const access_token = useSelector(state => state).access_token;
   const [showModal, setShowModal] = useState(false);
 
@@ -17,15 +19,21 @@ export const Card = (props) => {
       url: `https://kawahedukasibackend.herokuapp.com/content/delete/${id}`,
       params: id,
       headers: { access_token }
-    }).then(res => console.log(res)).catch(err => console.log(err))
+    }).then(({ data }) => {
+      alert(data.message)
+      navigate("/")
+    }).catch(err => {
+      alert(err.data)
+      console.log(err)
+    })
   }
 
   return (
     <div>
       <ModalProduct showModal={showModal} toggle={()=>setShowModal(!showModal)} id={props.id} />
       <div className="d-flex justify-content-center">
-        <button className="btn btn-info text-white small shadow-lg rounded-0" onClick={()=>setShowModal(!showModal)}><i className="fa-solid fa-pen"></i></button>
-        <button className="btn btn-danger text-white small shadow-lg rounded-0" onClick={()=>window.confirm("Are sure want delete?")?Delete(props.id):""}><i className="fa-solid fa-trash"></i></button>
+        <button className="btn btn-dark text-primary2 small shadow-lg rounded-0" onClick={()=>setShowModal(!showModal)}><i className="fa-solid fa-pen"></i></button>
+        <button className="btn btn-dark text-primary2 small shadow-lg rounded-0" onClick={()=>window.confirm("Are sure want delete?")?Delete(props.id):""}><i className="fa-solid fa-trash"></i></button>
       </div>
       <div className="card shadow-lg p-0">
         <img src={props.image} className="card-img-top rounded-0" alt="gambar" />
@@ -33,7 +41,7 @@ export const Card = (props) => {
           <h4 className="card-title fw-bold px-3 mt-4">{props.title}</h4>
           <p className="card-desc normal fw-medium text-secondary px-3 mt-3 mb-4">{props.desc}</p>
           <div className="hr mb-4" />
-          <h3 className="fw-bold mb-4">{props.price}</h3>
+          <h3 className="fw-bold mb-4">{props.price.substr(0, 3) + "." + props.price.substr(3)},00</h3>
           <button onClick={props.onClick} className="btn btn-dark fw-semibold w-100 p-3 rounded-0 ">
             BUY NOW
             <span className="text-primary2 ms-2">
