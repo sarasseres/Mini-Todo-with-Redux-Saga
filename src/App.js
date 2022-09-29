@@ -22,6 +22,7 @@ function App() {
           <Route path="about" element={auth ? <Navigate to="/login" /> : <Pages.About />} />
           {/* Dynamic Route */}
           <Route path="clothes/:slug" element={auth ? <Navigate to="/login" /> : <Pages.Detail />} />
+          <Route path="categories/:category" element={auth ? <Navigate to="/login" /> : <Pages.Clothes />} />
         </Route>
         <Route path="/login" element={auth ? <Pages.Login /> : <Navigate to="/" />} />
         <Route path="/form" element={auth ? <Pages.Form /> : <Navigate to="/form" />} />

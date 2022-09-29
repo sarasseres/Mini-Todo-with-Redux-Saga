@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-// import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+// import { useSelector } from "react-redux";
 
 // function slugToTitle(slug) {
 //   let prevTitle = slug.split("-");
@@ -20,6 +20,7 @@ export const DetailProduct = () => {
   const params = useParams();
   const [cloth, setCloth] = useState({});
   const [img, setImg] = useState("empty.jpg");
+  const [primaryImage, setPrimaryImage] = useState("empty.jpg");
   const [price, setPrice] = useState("");
 
   useEffect(() => {
@@ -33,9 +34,10 @@ export const DetailProduct = () => {
   useEffect(() => {
     if (cloth?.image) {
       setImg(cloth?.image)
-      setPrice(cloth.description6.slice(0, 3) + "." + cloth.description6.slice(3))
+      setPrimaryImage(cloth?.image)
+      setPrice(cloth.description6.slice(0, cloth.description6.length - 3) + "." + cloth.description6.slice(cloth.description6.length - 3))
     }
-  }, [cloth?.image])
+  }, [cloth?.image, cloth?.description6])
 
   function additionalImage(order) {
     try {
@@ -51,18 +53,13 @@ export const DetailProduct = () => {
       <div className="row m-0 justify-content-between align-items-center">
         <div className="col-lg-5 p-0">
           <div className="detail-img mb-lg-0 mb-5">
-            <div className="detail-img-header">
-              <img
-                src={require(`./../../assets/images/products/${img}`)}
-                alt={cloth?.name}
-              />
-            </div>
+            <div className="detail-img-header" style={{backgroundImage: `url(${require(`./../../assets/images/products/${img}`)})`}} />
 
             <div className="detail-img-small d-flex">
               <button onClick={() => setImg(cloth?.image)}>
                 <div
                   className="img"
-                  style={{backgroundImage: `url(${require(`./../../assets/images/products/${img}`)})`}}
+                  style={{backgroundImage: `url(${require(`./../../assets/images/products/${primaryImage}`)})`}}
                 />
               </button>
 

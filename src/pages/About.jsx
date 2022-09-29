@@ -1,14 +1,12 @@
-import * as Components from "./../components/Components";
 import * as AboutComponents from "./../components/About/AboutComponents"; // EDIT
-
 import "./../components/About/style.css"; // EDIT
 
 const About = () => {
   return (
-    <Components.Container>
+    <div className="container">
       <AboutComponents.History />
       <AboutComponents.Team />
-    </Components.Container>
+    </div>
   );
 }
 

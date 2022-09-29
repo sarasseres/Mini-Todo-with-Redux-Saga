@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios from 'axios'
+import Swal from 'sweetalert2';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -46,11 +47,7 @@ export const ModalProduct = (props) => {
 
   useEffect(() => {
     axios.get('https://kawahedukasibackend.herokuapp.com/content/data/bhevin_4').then(({ data }) => setInput(data.filter((e) => e.id === props.id)[0]));
-
-    if (props.showModal) {
-      console.log(input);
-    }
-  }, [props.showModal]);
+  }, []);
 
   useEffect(() => {
     if (input?.image) {
@@ -73,10 +70,15 @@ export const ModalProduct = (props) => {
       data: input,
       headers: { access_token },
     })
-      .then((res) => {
-        alert(res.data.message);
-        console.log(res);
-        navigate('/');
+      .then(({ data }) => {
+        Swal.fire({
+          background: '#252336',
+          color: '#3dcd55',
+          title: 'Created!',
+          text: data.message,
+          icon: 'success',
+        });
+        navigate("/");
       })
       .catch((err) => console.log(err));
 
@@ -93,10 +95,16 @@ export const ModalProduct = (props) => {
       params: props.id,
       headers: { access_token },
     })
-      .then((res) => {
-        alert(res.data.message);
-        console.log(res);
-        navigate('/');
+      .then(({ data }) => {
+        Swal.fire({
+          background: '#252336',
+          color: '#3dcd55',
+          title: 'Updated!',
+          text: data.message,
+          confirmButtonColor: '#3dcd55',
+          icon: 'success',
+        });
+        navigate("/");
       })
       .catch((err) => console.log(err));
 
@@ -165,6 +173,20 @@ export const ModalProduct = (props) => {
                     </option>
                   ) : (
                     <option value="Jacket">Jacket</option>
+                  )}
+                  {input?.description4 === 'Short' ? (
+                    <option selected value="Short">
+                      Short
+                    </option>
+                  ) : (
+                    <option value="Short">Short</option>
+                  )}
+                  {input?.description4 === 'Legging' ? (
+                    <option selected value="Legging">
+                      Legging
+                    </option>
+                  ) : (
+                    <option value="Legging">Legging</option>
                   )}
                   {input?.description4 === 'Dress' ? (
                     <option selected value="Dress">

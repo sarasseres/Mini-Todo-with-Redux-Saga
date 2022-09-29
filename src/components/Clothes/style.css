@@ -36,11 +36,13 @@
 .formTemplate form div {
   margin-bottom: 30px;
 }
+
 .formTemplate label {
   display: block;
   font-weight: 700;
   margin-bottom: 5px;
 }
+
 .formTemplate input {
   display: block;
   width: 100%;
@@ -64,4 +66,17 @@
   text-align: center;
   width: 10em;
   border: none;
+}
+
+.card-img-top {
+  display: block;
+  width: 100%;
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.clothies-header {
+  margin-top: 90px;
 }
