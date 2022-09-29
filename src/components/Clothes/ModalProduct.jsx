@@ -110,7 +110,7 @@ export const ModalProduct = (props) => {
         <Container className="formTemplate py-4">
           <form method="post" encType="multipart/form-data" onSubmit={() => props.id ? update() : create()}>
             <div className="inputContainer detail-img-small">
-              {props.id && <div className="img" style={{backgroundImage: `url(${showImage})`}} />}
+              {props.id && showImage && <div className="img" style={{backgroundImage: `url(${showImage})`}} />}
               <div className="photo">
                 <label className="form-label normal" htmlFor="image">
                   Image
@@ -135,6 +135,7 @@ export const ModalProduct = (props) => {
                   name="name"
                   value={input?.name}
                   onChange={(e) => handleChange("name", e.target.value)}
+                  required
                 />
               </div>
               <div className="description2">
@@ -197,6 +198,7 @@ export const ModalProduct = (props) => {
                   name="description6"
                   value={input?.description6}
                   onChange={(e) => handleChange("description6", e.target.value)}
+                  required
                 />
               </div>
             </div>

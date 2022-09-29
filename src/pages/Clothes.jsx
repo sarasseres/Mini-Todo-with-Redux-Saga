@@ -45,7 +45,7 @@ const Clothes = () => {
               <div className="col-lg-3 col-md-5 col-10 my-md-5 my-4" key={cloth.id}>
                 <ClothesComponents.Card
                   id={cloth.id}
-                  image={require(`./../assets/images/products/${cloth.image}`)}
+                  image={cloth.image ? require(`./../assets/images/products/${cloth.image}`) : ""}
                   title={cloth.name} 
                   desc={cloth.description2} 
                   price={cloth.description6} 
