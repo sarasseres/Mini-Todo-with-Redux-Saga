@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-// import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+// import { useSelector } from "react-redux";
 
 // function slugToTitle(slug) {
 //   let prevTitle = slug.split("-");
@@ -20,6 +20,7 @@ export const DetailProduct = () => {
   const params = useParams();
   const [cloth, setCloth] = useState({});
   const [img, setImg] = useState("empty.jpg");
+  const [primaryImage, setPrimaryImage] = useState("empty.jpg");
   const [price, setPrice] = useState("");
 
   useEffect(() => {
@@ -28,21 +29,21 @@ export const DetailProduct = () => {
     .then(({ data }) => {
       setCloth(data.filter(e => e.description1 === params.slug)[0])
     })
-  });
+  })
 
   useEffect(() => {
     if (cloth?.image) {
       setImg(cloth?.image)
-      setPrice(cloth.description6.slice(0, 3) + "." + cloth.description6.slice(3))
+      setPrimaryImage(cloth?.image)
+      setPrice(cloth.description6.slice(0, cloth.description6.length - 3) + "." + cloth.description6.slice(cloth.description6.length - 3))
     }
-  }, [cloth?.image])
+  }, [cloth?.image, cloth?.description6])
 
   function additionalImage(order) {
     try {
       require(`./../../assets/images/products/${cloth?.image.slice(0, cloth?.image.length - 4) + `-${order}.jpg`}`);
       return `${cloth?.image.slice(0, cloth?.image.length - 4) + `-${order}.jpg`}`;
     } catch (e) {
-      require(`./../../assets/images/products/${img}`);
       return img;
     }
   }
@@ -52,18 +53,13 @@ export const DetailProduct = () => {
       <div className="row m-0 justify-content-between align-items-center">
         <div className="col-lg-5 p-0">
           <div className="detail-img mb-lg-0 mb-5">
-            <div className="detail-img-header">
-              <img
-                src={require(`./../../assets/images/products/${img}`)}
-                alt={cloth.name}
-              />
-            </div>
+            <div className="detail-img-header" style={{backgroundImage: `url(${require(`./../../assets/images/products/${img}`)})`}} />
 
             <div className="detail-img-small d-flex">
               <button onClick={() => setImg(cloth?.image)}>
                 <div
                   className="img"
-                  style={{backgroundImage: `url(${require(`./../../assets/images/products/${img}`)})`}}
+                  style={{backgroundImage: `url(${require(`./../../assets/images/products/${primaryImage}`)})`}}
                 />
               </button>
 
@@ -100,12 +96,12 @@ export const DetailProduct = () => {
                 <Link to="/clothes" className="fw-semibold text-primary2">Clothes</Link>
               </li>
               <li className="breadcrumb-item active" aria-current="page">
-                {cloth.name}
+                {cloth?.name}
               </li>
             </ol>
           </nav>
           <div className="desc p-0">
-            <h3 className="mt-5 fw-bold">{cloth.name}</h3>
+            <h3 className="mt-5 fw-bold">{cloth?.name}</h3>
             <h4 className="mt-3">Rp {price},00</h4>
             <select className="form-select my-4" id="inputGroupSelect02">
               <option>Select Size</option>
@@ -124,12 +120,10 @@ export const DetailProduct = () => {
               </button>
             </div>
             <p className="normal">
-              {cloth.description2}
+              {cloth?.description2}
             </p>
             <p className="normal">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque,
-              perspiciatis optio eaque, cum, repellat cupiditate asperiores
-              vitae inventore earum corporis obcaecati fugit sunt dolo...
+              {cloth?.description3}
             </p>
           </div>
         </div>

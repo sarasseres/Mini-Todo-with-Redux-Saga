@@ -1,4 +1,5 @@
-import axios from 'axios';
+import axios from 'axios'
+import Swal from 'sweetalert2';
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -46,11 +47,7 @@ export const ModalProduct = (props) => {
 
   useEffect(() => {
     axios.get('https://kawahedukasibackend.herokuapp.com/content/data/bhevin_4').then(({ data }) => setInput(data.filter((e) => e.id === props.id)[0]));
-
-    if (props.showModal) {
-      console.log(input);
-    }
-  }, [props.showModal]);
+  }, []);
 
   useEffect(() => {
     if (input?.image) {
@@ -73,10 +70,15 @@ export const ModalProduct = (props) => {
       data: input,
       headers: { access_token },
     })
-      .then((res) => {
-        alert(res.data.message);
-        console.log(res);
-        navigate('/');
+      .then(({ data }) => {
+        Swal.fire({
+          background: '#252336',
+          color: '#3dcd55',
+          title: 'Created!',
+          text: data.message,
+          icon: 'success',
+        });
+        navigate("/");
       })
       .catch((err) => console.log(err));
 
@@ -93,10 +95,16 @@ export const ModalProduct = (props) => {
       params: props.id,
       headers: { access_token },
     })
-      .then((res) => {
-        alert(res.data.message);
-        console.log(res);
-        navigate('/');
+      .then(({ data }) => {
+        Swal.fire({
+          background: '#252336',
+          color: '#3dcd55',
+          title: 'Updated!',
+          text: data.message,
+          confirmButtonColor: '#3dcd55',
+          icon: 'success',
+        });
+        navigate("/");
       })
       .catch((err) => console.log(err));
 
@@ -112,7 +120,7 @@ export const ModalProduct = (props) => {
         <Container className="formTemplate py-4">
           <form method="post" encType="multipart/form-data" onSubmit={() => (props.id ? update() : create())}>
             <div className="inputContainer detail-img-small">
-              <div className="img" style={{ backgroundImage: `url(${showImage})` }}></div>
+              {props.id && showImage && <div className="img" style={{backgroundImage: `url(${showImage})`}} />}
               <div className="photo">
                 <label className="form-label normal" htmlFor="image">
                   Image
@@ -123,7 +131,14 @@ export const ModalProduct = (props) => {
                 <label className="form-label normal mb-2" htmlFor="name">
                   Cloth Name
                 </label>
-                <input type="text" id="name" name="name" value={input?.name} onChange={(e) => handleChange('name', e.target.value)} />
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={input?.name}
+                  onChange={(e) => handleChange("name", e.target.value)}
+                  required
+                />
               </div>
               <div className="description2">
                 <label className="form-label normal mb-2" htmlFor="desc">
@@ -158,6 +173,20 @@ export const ModalProduct = (props) => {
                     </option>
                   ) : (
                     <option value="Jacket">Jacket</option>
+                  )}
+                  {input?.description4 === 'Short' ? (
+                    <option selected value="Short">
+                      Short
+                    </option>
+                  ) : (
+                    <option value="Short">Short</option>
+                  )}
+                  {input?.description4 === 'Legging' ? (
+                    <option selected value="Legging">
+                      Legging
+                    </option>
+                  ) : (
+                    <option value="Legging">Legging</option>
                   )}
                   {input?.description4 === 'Dress' ? (
                     <option selected value="Dress">
@@ -217,7 +246,14 @@ export const ModalProduct = (props) => {
                 <label className="form-label normal mb-2" htmlFor="description6">
                   Price
                 </label>
-                <input type="number" id="description6" name="description6" value={input?.description6} onChange={(e) => handleChange('description6', e.target.value)} />
+                <input
+                  type="number"
+                  id="description6"
+                  name="description6"
+                  value={input?.description6}
+                  onChange={(e) => handleChange("description6", e.target.value)}
+                  required
+                />
               </div>
             </div>
             <Button

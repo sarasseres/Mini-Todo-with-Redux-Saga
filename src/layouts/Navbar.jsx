@@ -49,7 +49,7 @@ const Navbar = () => {
           <div className="navbar-nav mx-auto">
             {navs.map((el, id) => {
               return (
-                <div key={id} onClick={() => navigate(el.path)} className={`nav-link cursor-pointer fw-medium me-lg-4 ${location.pathname === el.path ? 'active' : ''}`}>
+                <div key={id} onClick={() => navigate(el.path)} className={`nav-link cursor-pointer fw-semibold me-lg-4 ${location.pathname === el.path ? 'active' : ''}`}>
                   {el.title}
                 </div>
               );

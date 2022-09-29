@@ -14,9 +14,13 @@
     width: 100%;
 }
 
-.detail-img-header img {
+.detail-img-header {
+    display: block;
     width: 100%;
-    margin-bottom: 20px;
+    height: 600px;
+    background-size: cover;
+    background-position-x: center;
+    background-repeat: no-repeat;
 }
 
 .detail-img-small button {
@@ -70,4 +74,10 @@
 .qty-button button {
     margin-left: 20px;
     padding: 10px;
+}
+
+@media screen and (max-width: 640px) {
+    .detail-img-header {
+        height: 450px;
+    }
 }

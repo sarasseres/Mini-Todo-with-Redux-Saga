@@ -1,13 +1,11 @@
-import * as Components from "./../components/Components";
 import * as DetailComponents from "./../components/Detail/DetailComponents"; // EDIT
-
 import "./../components/Detail/style.css"; // EDIT
 
 const Detail = () => {
   return (
-    <Components.Container>
+    <div className="container">
       <DetailComponents.DetailProduct />
-    </Components.Container>
+    </div>
   );
 }
 
