@@ -56,20 +56,25 @@ const data = {
       slug: 'khaki-cord-pocket-overshirt',
       desc: "Some quick example text to build on the card title and make up the bulk of the card's content.",
       price: '370.000,00',
-    }
+    },
   ],
   users: [
     {
-      username: "user",
-      password: "user123",
-      access_token: "714xvcxc/zdd:87;432ds=w"
+      username: 'user',
+      password: 'user123',
+      access_token: '714xvcxc/zdd:87;432ds=w',
     },
     {
-      username: "admin",
-      password: "admin123",
-      access_token: "qwert4yxjal+adasdk~d41@"
+      username: 'admin',
+      password: 'admin123',
+      access_token: 'qwert4yxjal+adasdk~d41@',
     },
-  ]
-}
+  ],
+};
+
+// const dataModal = {
+//   modalUpdate:
+
+// }
 
 export default data;
