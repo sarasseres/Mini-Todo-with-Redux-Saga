@@ -81,7 +81,7 @@ export const Card = (props) => {
             backgroundImage: `url(${props.image ? props.image : require("./../../assets/images/products/empty.jpg")})`
           }} />
           <div className={`btn cart-button position-absolute rounded-circle ${cart ? "bg-dark text-primary2" : "bg-white"}`} onClick={()=>setCart(!cart)}>
-            <h5 className="m-0"><i class="fa-solid fa-heart"></i></h5>
+            <h5 className="m-0"><i className="fa-solid fa-heart"></i></h5>
           </div>
         </div>
         <div className="card-body p-0 text-center">

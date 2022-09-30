@@ -88,7 +88,7 @@
 }
 
 .clothes-header {
-  margin-top: 90px;
+  margin-top: 86px;
 }
 
 .btn-pagination {
@@ -100,4 +100,16 @@
   background-color: var(--mainColor) !important;
   color: var(--primaryColor) !important;
   border: 2px solid var(--mainColor);
+}
+.search-btn {
+  background-color: var(--primaryColor) !important;
+  color: white;
+}
+
+.search-btn:hover {
+  background-color: #2dad43 !important;
+}
+
+.search-input:focus {
+  border: 1px solid var(--primaryColor);
 }
