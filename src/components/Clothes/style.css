@@ -61,6 +61,16 @@
   text-decoration: none;
 }
 
+.cart-button {
+  top: 5%;
+  left: 5%;
+  padding: 9px 10px 7px 10px;
+}
+
+.cart-button h5 {
+  font-size: 16px;
+}
+
 .createButton {
   background-color: var(--primaryColor) !important;
   text-align: center;
