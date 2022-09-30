@@ -80,3 +80,16 @@
 .clothies-header {
   margin-top: 90px;
 }
+
+.search-btn {
+  background-color: var(--primaryColor) !important;
+  color: white;
+}
+
+.search-btn:hover {
+  background-color: #2dad43 !important;
+}
+
+.search-input:focus {
+  border: 1px solid var(--primaryColor);
+}
