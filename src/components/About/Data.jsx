@@ -1,6 +1,6 @@
 const data = [
   {
-    image: "irham-sm.jpg",
+    image: "irham2.jpg",
     name: "Irham Muhammad Shidiq",
     position: "Ketua",
     desc: `"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque repellat quae ea quam corporis."`,

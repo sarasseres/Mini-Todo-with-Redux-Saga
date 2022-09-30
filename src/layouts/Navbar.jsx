@@ -34,7 +34,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="navbar navbar-expand-lg pt-3">
+    <nav className="navbar navbar-expand-lg pt-4">
       <div className="container">
         <a className="navbar-brand" href="/">
           <h2 className="fw-bold mt-2">
@@ -49,7 +49,7 @@ const Navbar = () => {
           <div className="navbar-nav mx-auto">
             {navs.map((el, id) => {
               return (
-                <div key={id} onClick={() => navigate(el.path)} className={`nav-link cursor-pointer fw-semibold me-lg-4 ${location.pathname === el.path ? 'active' : ''}`}>
+                <div key={id} onClick={() => navigate(el.path)} className={`nav-link cursor-pointer fw-semibold ms-lg-5 ${location.pathname === el.path ? 'active' : ''}`}>
                   {el.title}
                 </div>
               );

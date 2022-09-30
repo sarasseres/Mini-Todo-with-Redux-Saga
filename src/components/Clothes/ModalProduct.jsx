@@ -76,6 +76,7 @@ export const ModalProduct = (props) => {
           color: '#3dcd55',
           title: 'Created!',
           text: data.message,
+          confirmButtonColor: '#3dcd55',
           icon: 'success',
         });
         navigate("/");

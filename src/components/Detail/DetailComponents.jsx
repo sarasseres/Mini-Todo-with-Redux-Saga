@@ -51,33 +51,38 @@ export const DetailProduct = () => {
   return (
     <div className="detail mt-5">
       <div className="row m-0 justify-content-between align-items-center">
-        <div className="col-lg-5 p-0">
-          <div className="detail-img mb-lg-0 mb-5">
-            <div className="detail-img-header" style={{backgroundImage: `url(${require(`./../../assets/images/products/${img}`)})`}} />
-
-            <div className="detail-img-small d-flex">
-              <button onClick={() => setImg(cloth?.image)}>
+        <div className="col-lg-5 detail-img mb-lg-0 mb-5 p-0">
+          <div className="detail-img-header" style={{backgroundImage: `url(${require(`./../../assets/images/products/${img}`)})`}} />
+          <div className="detail-img-small row m-0">
+            <div className="col-3 p-0">
+              <button className="w-100" onClick={() => setImg(cloth?.image)}>
                 <div
                   className="img"
                   style={{backgroundImage: `url(${require(`./../../assets/images/products/${primaryImage}`)})`}}
                 />
               </button>
+            </div>
 
-              <button onClick={() => setImg(additionalImage(2))}>
+            <div className="col-3 p-0">
+              <button className="w-100" onClick={() => setImg(additionalImage(2))}>
                 <div
                   className="img"
                   style={{backgroundImage: `url(${require(`./../../assets/images/products/${additionalImage(2)}`)})`}}
                 />
               </button>
+            </div>
 
-              <button onClick={() => setImg(additionalImage(3))}>
+            <div className="col-3 p-0">
+              <button className="w-100" onClick={() => setImg(additionalImage(3))}>
                 <div
                   className="img"
                   style={{backgroundImage: `url(${require(`./../../assets/images/products/${additionalImage(3)}`)})`}}
                 />
               </button>
+            </div>
 
-              <button onClick={() => setImg(additionalImage(4))}>
+            <div className="col-3 p-0">
+              <button className="w-100" onClick={() => setImg(additionalImage(4))}>
                 <div
                   className="img"
                   style={{backgroundImage: `url(${require(`./../../assets/images/products/${additionalImage(4)}`)})`}}

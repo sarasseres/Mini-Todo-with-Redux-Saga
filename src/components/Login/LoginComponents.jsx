@@ -1,7 +1,7 @@
+import axios from 'axios';
+import Swal from 'sweetalert2';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
-import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { setAuth } from '../../bootstrap/action';
 
@@ -39,12 +39,18 @@ export const Login = () => {
       data: datas,
     })
       .then(({ data }) => {
-        alert('Success Login!');
+        Swal.fire({
+          background: '#252336',
+          color: '#3dcd55',
+          title: 'Success Login!',
+          text: data.message,
+          confirmButtonColor: '#3dcd55',
+          icon: 'success',
+        });
         dispatch(setAuth({ access_token: data?.access_token }));
       })
-      .catch((err) => {
+      .catch(() => {
         setError(true);
-        console.log(err.message);
       });
   }
 
@@ -89,7 +95,14 @@ export const Login = () => {
             id="loginForm"
             onSubmit={(e) => {
               e.preventDefault();
-              isSame ? checkLogin(formData) : alert('Password Tidak Sama!');
+              isSame ? checkLogin(formData) : Swal.fire({
+                background: '#252336',
+                color: '#3dcd55',
+                title: 'Failed Login!',
+                text: 'Confirm Password must same with Password',
+                confirmButtonColor: '#3dcd55',
+                icon: 'error',
+              });
             }}
           >
             <div className="my-4">

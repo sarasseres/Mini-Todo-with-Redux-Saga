@@ -13,6 +13,7 @@ export const Card = (props) => {
   const navigate = useNavigate();
   const access_token = useSelector(state => state).access_token;
   const [showModal, setShowModal] = useState(false);
+  const [cart, setCart] = useState(false);
 
   function Delete(id) {
     const swalWithBootstrapButtons = Swal.mixin({
@@ -75,9 +76,14 @@ export const Card = (props) => {
         <button className="btn btn-dark text-primary2 small shadow-lg rounded-0" onClick={()=>Delete(props.id)}><i className="fa-solid fa-trash"></i></button>
       </div>
       <div className="card shadow-lg p-0">
-        <div className="card-img-top rounded-0" style={{
-          backgroundImage: `url(${props.image ? props.image : require("./../../assets/images/products/empty.jpg")})`
-        }} />
+        <div className="position-relative">
+          <div className="card-img-top rounded-0" style={{
+            backgroundImage: `url(${props.image ? props.image : require("./../../assets/images/products/empty.jpg")})`
+          }} />
+          <div className={`btn cart-button position-absolute rounded-circle ${cart ? "bg-dark text-primary2" : "bg-white"}`} onClick={()=>setCart(!cart)}>
+            <h5 className="m-0"><i className="fa-solid fa-heart"></i></h5>
+          </div>
+        </div>
         <div className="card-body p-0 text-center">
           <h4 className="card-title fw-bold px-3 mt-4">{props.title}</h4>
           <p className="card-desc normal fw-medium text-secondary px-3 mt-3 mb-4">{props.desc}</p>

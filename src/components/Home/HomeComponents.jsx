@@ -195,9 +195,94 @@ export const ProductsSection = () => {
 
 export const TestimonialsSection = () => {
   return (
-    <section className="testimonials-section">
+    <section className="testimonials-section pt-5">
       <div className="container">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam necessitatibus voluptates autem et labore voluptatem, sunt repudiandae optio non, consequatur totam dolorum maiores exercitationem? Repellendus sapiente temporibus doloremque explicabo distinctio!</p>
+        <div className="d-flex align-items-center justify-content-between mb-4">
+          <div>
+            <div className="subtitle">What Customers Say</div>
+            <h1 className="title fw-bold lh-sm">Recent <span className="text-primary2">Reviews</span></h1>
+          </div>
+          <button className="btn btn-primary2 text-white rounded-4 py-2 px-5">
+            <h5 className="m-0"><i className="fa-solid fa-arrow-right"></i></h5>
+          </button>
+        </div>
+        <div className="row m-0">
+          <div className="col-lg-4 ps-0 pe-lg-4 p-0 my-4">
+            <div className="card rounded-3 shadow">
+              <div className="card-body p-4 mt-2 border-bottom">
+                <p className="fw-medium normal m-0">
+                  Morbi in metus rutrum, Nunc id dolor eget dui rhoncus vehicula. Integer sit amet ante eleifend, ullamcorper lectus et, Mauris neque justo, tristique vitae massa in, malesuada suscipit nisl.
+                </p>
+              </div>
+              <div className="card-body d-flex align-items-center justify-content-between p-4 mb-2">
+                <div className="d-flex align-items-center">
+                  <div className="testimonial-img rounded-circle" style={{backgroundImage: `url(${require("./../../assets/images/about/adedaudhasan.png")})`}} />
+                  <div className="ms-3">
+                    <p className="fw-bold mb-1">Hasan Daud Ade</p>
+                    <p className="fw-semibold small m-0">Digital Marketing</p>
+                  </div>
+                </div>
+                <div className="d-flex align-items-center">
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-regular fa-star"></i></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-4 px-lg-2 p-0 my-4">
+            <div className="card rounded-3 shadow">
+              <div className="card-body p-4 mt-2 border-bottom">
+                <p className="fw-medium normal m-0">
+                  Nullam a iaculis lacus, non ultricies magna. Donec sagittis est a est sollicitudin dignissim ac sed velit. Praesent et mi tincidunt, condimentum diam nec, finibus odio.
+                </p>
+              </div>
+              <div className="card-body d-flex align-items-center justify-content-between p-4 mb-2">
+                <div className="d-flex align-items-center">
+                  <div className="testimonial-img rounded-circle" style={{backgroundImage: `url(${require("./../../assets/images/about/adeilham.jpeg")})`}} />
+                  <div className="ms-3">
+                    <p className="fw-bold mb-1">Ilham Ade</p>
+                    <p className="fw-semibold small m-0">Developer</p>
+                  </div>
+                </div>
+                <div className="d-flex align-items-center">
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star-half-stroke"></i></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-4 ps-lg-4 pe-0 p-0 my-4">
+            <div className="card rounded-3 shadow">
+              <div className="card-body p-4 mt-2 border-bottom">
+                <p className="fw-medium normal m-0">
+                  Curabitur volutpat arcu in nisi porta vestibulum. Sed interdum nisl vel enim varius, vel venenatis risus viverra. Nunc molestie sem a justo laoreet, eget cursus justo porta. Interdum et malesuada fames ac
+                </p>
+              </div>
+              <div className="card-body d-flex align-items-center justify-content-between p-4 mb-2">
+                <div className="d-flex align-items-center">
+                  <div className="testimonial-img rounded-circle" style={{backgroundImage: `url(${require("./../../assets/images/about/saras.jpg")})`}} />
+                  <div className="ms-3">
+                    <p className="fw-bold mb-1">Saras Dewi</p>
+                    <p className="fw-semibold small m-0">Influencer</p>
+                  </div>
+                </div>
+                <div className="d-flex align-items-center">
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

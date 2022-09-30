@@ -103,6 +103,15 @@
   left: 22px;
 }
 
+.testimonial-img {
+  display: block;
+  width: 48px;
+  height: 48px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 @media screen and (max-width: 768px) {
   .partners-section .partners {
     width: 100%;

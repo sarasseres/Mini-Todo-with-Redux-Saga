@@ -4,7 +4,7 @@ const Member = (props) => {
    return (
       <div className="col-lg-3 col-sm-8 col-10 rounded-4 overflow-hidden p-0 shadow mb-5">
          <div className="card p-4">
-            <img className="rounded-4" src={require(`../../assets/images/about/${props.image}`)} alt="Irham Muhammad Shidiq" />
+            <div className="team-image rounded-4" style={{backgroundImage: `url(${require(`../../assets/images/about/${props.image}`)})`}} alt={props.name} />
             <h5 className="mt-4 text-primary2 fw-semibold">{props.name}</h5>
             <p className="mt-1 mb-4 fw-semibold">{props.position}, Asal dari {props.address}</p>
             <p className="normal mb-2 text-secondary">{props.desc}</p>

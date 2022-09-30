@@ -61,6 +61,16 @@
   text-decoration: none;
 }
 
+.cart-button {
+  top: 5%;
+  left: 5%;
+  padding: 9px 10px 7px 10px;
+}
+
+.cart-button h5 {
+  font-size: 16px;
+}
+
 .createButton {
   background-color: var(--primaryColor) !important;
   text-align: center;
@@ -68,7 +78,7 @@
   border: none;
 }
 
-.card-img-top {
+.clothes .card-img-top {
   display: block;
   width: 100%;
   height: 400px;
@@ -77,6 +87,29 @@
   background-size: cover;
 }
 
-.clothies-header {
-  margin-top: 90px;
+.clothes-header {
+  margin-top: 86px;
+}
+
+.btn-pagination {
+  border: 2px solid var(--primaryColor);
+  color: var(--mainColor);
+}
+
+.btn-pagination:hover, .btn-pagination.active {
+  background-color: var(--mainColor) !important;
+  color: var(--primaryColor) !important;
+  border: 2px solid var(--mainColor);
+}
+.search-btn {
+  background-color: var(--primaryColor) !important;
+  color: white;
+}
+
+.search-btn:hover {
+  background-color: #2dad43 !important;
+}
+
+.search-input:focus {
+  border: 1px solid var(--primaryColor);
 }
