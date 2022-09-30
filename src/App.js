@@ -9,7 +9,7 @@ import Layout from './layouts/Layout';
 import * as Pages from './pages';
 
 function App() {
-  const auth = useSelector((state) => state).access_token === undefined;
+  const auth = useSelector(state => state).access_token === undefined;
 
   return (
     <BrowserRouter>

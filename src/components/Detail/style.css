@@ -6,14 +6,6 @@
     color: var(--primaryColor) !important;
 }
 
-.detail {
-    display: flex;
-}
-
-.detail-img {
-    width: 100%;
-}
-
 .detail-img-header {
     display: block;
     width: 100%;

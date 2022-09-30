@@ -68,7 +68,7 @@
   border: none;
 }
 
-.card-img-top {
+.clothes .card-img-top {
   display: block;
   width: 100%;
   height: 400px;
@@ -77,6 +77,17 @@
   background-size: cover;
 }
 
-.clothies-header {
+.clothes-header {
   margin-top: 90px;
+}
+
+.btn-pagination {
+  border: 2px solid var(--primaryColor);
+  color: var(--mainColor);
+}
+
+.btn-pagination:hover, .btn-pagination.active {
+  background-color: var(--mainColor) !important;
+  color: var(--primaryColor) !important;
+  border: 2px solid var(--mainColor);
 }
