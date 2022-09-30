@@ -197,13 +197,13 @@ export const TestimonialsSection = () => {
   return (
     <section className="testimonials-section pt-5">
       <div className="container">
-        <div className="d-flex align-items-center justify-content-between mb-lg-5 mb-4">
+        <div className="d-flex align-items-center justify-content-between mb-4">
           <div>
             <div className="subtitle">What Customers Say</div>
             <h1 className="title fw-bold lh-sm">Recent <span className="text-primary2">Reviews</span></h1>
           </div>
           <button className="btn btn-primary2 text-white rounded-4 py-2 px-5">
-            <h5 className="m-0"><i class="fa-solid fa-arrow-right"></i></h5>
+            <h5 className="m-0"><i className="fa-solid fa-arrow-right"></i></h5>
           </button>
         </div>
         <div className="row m-0">
@@ -223,11 +223,11 @@ export const TestimonialsSection = () => {
                   </div>
                 </div>
                 <div className="d-flex align-items-center">
-                  <p className="ms-1 text-primary2 my-0"><i class="fa-solid fa-star"></i></p>
-                  <p className="ms-1 text-primary2 my-0"><i class="fa-solid fa-star"></i></p>
-                  <p className="ms-1 text-primary2 my-0"><i class="fa-solid fa-star"></i></p>
-                  <p className="ms-1 text-primary2 my-0"><i class="fa-solid fa-star"></i></p>
-                  <p className="ms-1 text-primary2 my-0"><i class="fa-regular fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-regular fa-star"></i></p>
                 </div>
               </div>
             </div>
@@ -248,11 +248,11 @@ export const TestimonialsSection = () => {
                   </div>
                 </div>
                 <div className="d-flex align-items-center">
-                  <p className="ms-1 text-primary2 my-0"><i class="fa-solid fa-star"></i></p>
-                  <p className="ms-1 text-primary2 my-0"><i class="fa-solid fa-star"></i></p>
-                  <p className="ms-1 text-primary2 my-0"><i class="fa-solid fa-star"></i></p>
-                  <p className="ms-1 text-primary2 my-0"><i class="fa-solid fa-star"></i></p>
-                  <p className="ms-1 text-primary2 my-0"><i class="fa-solid fa-star-half-stroke"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star-half-stroke"></i></p>
                 </div>
               </div>
             </div>
@@ -273,11 +273,11 @@ export const TestimonialsSection = () => {
                   </div>
                 </div>
                 <div className="d-flex align-items-center">
-                  <p className="ms-1 text-primary2 my-0"><i class="fa-solid fa-star"></i></p>
-                  <p className="ms-1 text-primary2 my-0"><i class="fa-solid fa-star"></i></p>
-                  <p className="ms-1 text-primary2 my-0"><i class="fa-solid fa-star"></i></p>
-                  <p className="ms-1 text-primary2 my-0"><i class="fa-solid fa-star"></i></p>
-                  <p className="ms-1 text-primary2 my-0"><i class="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
+                  <p className="ms-1 text-primary2 my-0"><i className="fa-solid fa-star"></i></p>
                 </div>
               </div>
             </div>

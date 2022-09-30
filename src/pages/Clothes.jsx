@@ -1,6 +1,6 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
 
 import * as ClothesComponents from "../components/Clothes/ClothesComponents"; // EDIT
 import ModalProduct from "../components/Clothes/ModalProduct";
