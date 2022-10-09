@@ -1,7 +1,7 @@
 import { initialState } from './initialState';
 import * as CONST from './constans';
 
-function reducer(state = initialState, action) {
+const reducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
     case CONST.TODO_BEGIN:
@@ -25,6 +25,6 @@ function reducer(state = initialState, action) {
     default:
       return state;
   }
-}
+};
 
 export default reducer;
