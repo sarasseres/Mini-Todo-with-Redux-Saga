@@ -1,24 +1,25 @@
-import inisialState from './initialState';
+import { initialState } from './initialState';
 import * as CONST from './constans';
 
-function reducer(state = inisialState, action) {
-  switch (action.type) {
-    case 'SET_AUTH':
+function reducer(state = initialState, action) {
+  const { type, payload } = action;
+  switch (type) {
+    case CONST.TODO_BEGIN:
       return {
         ...state,
-        access_token: action.payload.access_token,
+        todoLoading: true,
       };
-    case CONST.PUT_UPDATE_MODAL_BEGIN:
+    case CONST.TODO_SUCCESS:
       return {
         ...state,
+        todoData: payload,
+        todoLoading: false,
       };
-    case CONST.PUT_UPDATE_MODAL_SUCCESS:
+    case CONST.TODO_FAIL:
       return {
         ...state,
-      };
-    case CONST.PUT_UPDATE_MODAL_FAIL:
-      return {
-        ...state,
+        error: 'message',
+        todoData: false,
       };
 
     default:

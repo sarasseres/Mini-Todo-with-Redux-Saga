@@ -1,6 +1,9 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://kawahedukasibackend.herokuapp.com',
-  timeout: 10000,
+  baseURL: 'https://jsonplaceholder.typicode.com',
 });
+
+export const apiTodo = () => {
+  return api.get('/todos');
+};

@@ -1,10 +1,5 @@
-const data = {
-  access_token: undefined,
+export const initialState = {
+  todoLoading: false,
+  todoData: {},
+  error: null,
 };
-
-// const dataModal = {
-//   modalUpdate:
-
-// }
-
-export default data;

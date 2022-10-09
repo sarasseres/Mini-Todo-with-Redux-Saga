@@ -1,26 +1,21 @@
 import * as CONST from './constans';
 
-export const setAuth = (payload) => {
+export const setDataTodoBegin = (payload) => {
   return {
-    type: 'SET_AUTH',
+    type: CONST.TODO_BEGIN,
     payload,
   };
 };
 
-export const setMOdalBegin = () => {
+export const setDataTodoSuccess = (payload) => {
   return {
-    type: CONST.PUT_UPDATE_MODAL_BEGIN,
+    type: CONST.TODO_SUCCESS,
+    payload,
   };
 };
-
-export const setMOdalSuccess = () => {
+export const setDataTodoFail = (payload) => {
   return {
-    type: CONST.PUT_UPDATE_MODAL_SUCCESS,
-  };
-};
-
-export const setMOdalFail = () => {
-  return {
-    type: CONST.PUT_UPDATE_MODAL_FAIL,
+    type: CONST.TODO_FAIL,
+    payload,
   };
 };
