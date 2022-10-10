@@ -10,15 +10,18 @@ const Todos = (props) => {
   useEffect(() => {
     dispatch(setDataTodoBegin());
   }, [dispatch]);
-  const { todoData } = useSelector((state) => state);
-  console.log(todoData);
+  const todoData = useSelector((state) => state.todoData);
+  console.log(todoData, 'ini');
+
   return (
     <>
       <div className="container  my-3">
         <p className="h2 text-center text-dark fw-bold">Todo List</p>
         <CreateTodo.CreateTodo />
+      </div>
+      <div>
         {todoData.map((item, index) => (
-          <PartTodo.Todo key={index} title={item.title} />
+          <PartTodo.Todo key={index} title={item.title} userID={item.userId} status={item.completed.toString()} />
         ))}
       </div>
     </>

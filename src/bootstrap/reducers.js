@@ -1,5 +1,5 @@
-import { initialState } from './initialState';
 import * as ACTION from './action';
+import { initialState } from './initialState';
 
 const reducers = (state = initialState, action) => {
   switch (action.type) {
@@ -8,7 +8,6 @@ const reducers = (state = initialState, action) => {
         ...state,
         todoData: action.todoData,
       };
-
     default:
       return state;
   }

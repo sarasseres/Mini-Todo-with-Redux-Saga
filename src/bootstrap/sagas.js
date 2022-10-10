@@ -4,8 +4,6 @@ import * as ACTION from './action';
 
 function* setDataTodoBegin() {
   const todoData = yield call(API.apiTodo);
-  console.log('Masukkkk');
-  console.log({ todoData });
 
   yield put({ type: ACTION.TODO_SUCCESS, todoData });
 }
