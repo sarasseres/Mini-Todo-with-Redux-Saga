@@ -5,14 +5,15 @@ import App from './App';
 import createSagaMiddleWare from 'redux-saga';
 import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
-import { bootstrapSaga } from './bootstrap/sagas';
-import * as CONST from './bootstrap/constans';
+import mySaga from './bootstrap/sagas';
+
+import reducers from './bootstrap/reducers';
 
 const sagaMiddleware = createSagaMiddleWare();
-const store = createStore(Reducer, applyMiddleware(sagaMiddleware));
+const store = createStore(reducers, applyMiddleware(sagaMiddleware));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-sagaMiddleware.run(bootstrapSaga);
+sagaMiddleware.run(mySaga);
 // store.dispatch({ type: CONST.TODO_BEGIN });
 root.render(
   <React.StrictMode>

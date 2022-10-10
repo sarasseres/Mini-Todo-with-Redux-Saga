@@ -1,25 +1,12 @@
 import { initialState } from './initialState';
-import * as CONST from './constans';
+import * as ACTION from './action';
 
-const reducer = (state = initialState, action) => {
-  const { type, payload } = action;
-  switch (type) {
-    case CONST.TODO_BEGIN:
+const reducers = (state = initialState, action) => {
+  switch (action.type) {
+    case ACTION.TODO_SUCCESS:
       return {
         ...state,
-        todoLoading: true,
-      };
-    case CONST.TODO_SUCCESS:
-      return {
-        ...state,
-        todoData: payload,
-        todoLoading: false,
-      };
-    case CONST.TODO_FAIL:
-      return {
-        ...state,
-        error: 'message',
-        todoData: false,
+        todoData: action.todoData,
       };
 
     default:
@@ -27,4 +14,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default reducer;
+export default reducers;

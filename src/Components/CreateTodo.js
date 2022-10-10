@@ -11,7 +11,7 @@ export const CreateTodo = (props) => {
       className=" row justify-content-center m-5 "
       onSubmit={(e) => {
         e.preventDefault();
-        dispatch(setDataTodoBegin(todos));
+        // dispatch(setDataTodoBegin(todos));
       }}
     >
       <div class="col-lg-3 col-sm-8 p-0 ">

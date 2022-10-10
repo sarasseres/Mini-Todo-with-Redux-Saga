@@ -5,5 +5,5 @@ const api = axios.create({
 });
 
 export const apiTodo = () => {
-  return api.get('/todos');
+  return fetch('https://jsonplaceholder.typicode.com/todos').then((res) => res.json());
 };
