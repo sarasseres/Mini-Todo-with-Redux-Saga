@@ -17,6 +17,10 @@
 a {
   text-decoration: none;
 }
+.card {
+  border: none;
+  opacity: 2;
+}
 
 body {
   overflow-x: hidden;

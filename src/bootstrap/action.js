@@ -1,8 +1,22 @@
-export const TODO_BEGIN = 'TODO_BEGIN';
-export const TODO_SUCCESS = 'TODO_SUCCESS';
+import * as CONST from './constans';
 
-export const setDataTodoBegin = () => {
+export const setDataTodoBegin = (payload) => {
   return {
-    type: TODO_BEGIN,
+    type: CONST.TODO_BEGIN,
+    payload,
+  };
+};
+
+export const setDataTodoSuccess = (payload) => {
+  return {
+    type: CONST.TODO_SUCCESS,
+    payload,
+  };
+};
+
+export const setDataTodoFail = (payload) => {
+  return {
+    type: CONST.TODO_FAIL,
+    payload,
   };
 };
